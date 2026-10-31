@@ -1,0 +1,79 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.11 获取收藏夹对象",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "LatlngType=1 请求 CGCS2000（手册 2.2.2）"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20101,
+    "ret": 0,
+    "msg": {
+      "ObjID": 1000000002,
+      "LatlngType": 1
+    }
+  },
+  "response": {
+    "cmdid": 20101,
+    "ret": null,
+    "msg": {
+      "ObjItems": [
+        {
+          "Type": 13,
+          "ObjID": "1000000002",
+          "ParentID": 1000000001,
+          "SrvID": "4704353292937774453",
+          "tmModify": "2024/01/01 00:00:00",
+          "Object": {
+            "Name": "集水区草稿",
+            "Comment": "离线回放；非真实成果",
+            "Type": 13,
+            "ObjectDetail": {
+              "Gcj02": 0,
+              "OverlayIdx": 0,
+              "TrackType": 0,
+              "ShowLevel": 1,
+              "ShowLevelMax": 0,
+              "ShowLevelBak": 0,
+              "OuterRgnIdx": 0,
+              "EditMode": 0,
+              "ShowFlag": 2,
+              "LineClr": 16744448,
+              "LineWidth": 3,
+              "LineAlpha": 50,
+              "AreaClr": 1090486272,
+              "AreaAlpha": 60,
+              "StartAngle": 0,
+              "EndAngle": 0,
+              "FillType": 0,
+              "FillSubType": 0,
+              "FillPattern": 0,
+              "FillChgClr": 0,
+              "FillRotate": 0,
+              "FillScale": 0,
+              "FillOffsetX": 0,
+              "FillOffsetY": 0,
+              "Mtp": 4,
+              "Latlng": [
+                39.01,
+                106.57,
+                39.01,
+                106.58,
+                39.02,
+                106.58,
+                39.02,
+                106.57
+              ]
+            }
+          }
+        }
+      ],
+      "Simulated": true
+    }
+  }
+}

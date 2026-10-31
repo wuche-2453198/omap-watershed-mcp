@@ -1,0 +1,19 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.48.2 获取图形对象基本信息-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "official_sample_sdk": "omapInterfaceWeb_latest/omapInterfaceWeb/js/omapinterface.js GetShapeDetail 响应读取 PointCnt/AreaCnt/Perimeter/AreaSize",
+    "note": "表格字段名带匈牙利前缀（idObj/iPointCnt/iAreaCnt/dPerimeter/dAreaSize），示例与官方样例用无前缀名；Perimeter 单位 km、AreaSize 单位 ㎡"
+  },
+  "cmdid": 20802,
+  "msg": {
+    "ObjID": 828960081,
+    "PointCnt": 2,
+    "AreaCnt": 1,
+    "Perimeter": 1.884938,
+    "AreaSize": 282735.549033
+  }
+}

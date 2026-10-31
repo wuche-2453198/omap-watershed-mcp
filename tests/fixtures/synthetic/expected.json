@@ -1,0 +1,569 @@
+{
+  "canonical_crs": "EPSG:4490",
+  "cell_area_m2": 900.0,
+  "crs": "EPSG:32650",
+  "description": "解析真值合成 DEM fixture。掩膜像元集合与面积由地形公式推导，不是由被测实现生成；面积 = 像元数 × 900 m²（EPSG:32650，30 m）。",
+  "generated_by": "scripts/make_synthetic_dem.py",
+  "origin_xy": [
+    499000.0,
+    4400000.0
+  ],
+  "res_m": 30.0,
+  "scenarios": {
+    "crater_basin": {
+      "cell_area_m2": 900.0,
+      "dem": "crater_basin.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_hole_count": 0,
+      "expected_mask_cells": null,
+      "expected_mask_max_cells": 377,
+      "expected_mask_min_cells": 253,
+      "expected_no_truncation_warning": true,
+      "expected_snap_disabled": true,
+      "expected_truncated": false,
+      "expected_warnings_any": [],
+      "height": 41,
+      "mask_rule": {
+        "center": [
+          20,
+          20
+        ],
+        "r_max": 11.0,
+        "r_min": 9.0,
+        "type": "radius_bounds"
+      },
+      "note": "环形山内部闭合盆地：中心集水区不接触分析范围边界（无截断）；离散 D8 在环脊附近有方向歧义，故掩膜只要求落在半径 9–11 像元包络内。",
+      "outlet_cell": [
+        20,
+        20
+      ],
+      "outlet_lonlat": [
+        116.99550638665231,
+        39.74436616100898
+      ],
+      "outlet_xy": [
+        499615.0,
+        4399385.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 41
+    },
+    "plane_with_pit_downstream": {
+      "cell_area_m2": 900.0,
+      "dem": "plane_with_pit.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 34200.0,
+      "expected_flow_accum_cells": 38,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 38,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 20,
+      "mask_rule": {
+        "max": 59,
+        "min": 22,
+        "row": 7,
+        "type": "row_columns_range"
+      },
+      "note": "不填洼：深洼地(7,20)会截留行6/7/8 列0..21 的来水；下游出口(7,59)的上游精确 = 行7 列22..59 = 38 个像元。吸附半径取 5 m，避免吸附到相邻行的更大累积像元（那正是现实中的误吸附风险，另由吸附测试覆盖）。",
+      "outlet_cell": [
+        7,
+        59
+      ],
+      "outlet_lonlat": [
+        117.0091627679422,
+        39.74787986378266
+      ],
+      "outlet_xy": [
+        500785.0,
+        4399775.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "plane_with_pit_outlet": {
+      "cell_area_m2": 900.0,
+      "dem": "plane_with_pit.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 59400.0,
+      "expected_flow_accum_cells": 66,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 66,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "没有出流方向",
+        "分析范围截断"
+      ],
+      "height": 20,
+      "mask_rule": {
+        "rows": [
+          6,
+          7,
+          8
+        ],
+        "type": "rows_columns_le",
+        "value": 21
+      },
+      "note": "出口就是洼地：深洼地对相邻行也有吸引力，集水区精确 = 行6/7/8 × 列0..21 = 66 个像元，并应警告出口无出流（不填洼的直接后果）。",
+      "outlet_cell": [
+        7,
+        20
+      ],
+      "outlet_lonlat": [
+        116.99550615837724,
+        39.747880138422964
+      ],
+      "outlet_xy": [
+        499615.0,
+        4399775.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "single_bowl": {
+      "cell_area_m2": 900.0,
+      "dem": "single_bowl.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 1512900.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 1681,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 41,
+      "mask_rule": {
+        "type": "all"
+      },
+      "note": "单碗中心是唯一 sink，集水区 = 全部 41×41 = 1681 个像元。",
+      "outlet_cell": [
+        20,
+        20
+      ],
+      "outlet_lonlat": [
+        116.99550638665231,
+        39.74436616100898
+      ],
+      "outlet_xy": [
+        499615.0,
+        4399385.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 41
+    },
+    "single_bowl_fine": {
+      "cell_area_m2": 100.0,
+      "dem": "single_bowl_fine.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 1464100.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 14641,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 121,
+      "mask_rule": {
+        "type": "all"
+      },
+      "note": "10 m 细网格单碗（121×121）：碗心唯一 sink，集水区 = 全部 14641 个像元，面积 1,464,100 m²。30 m 栅格化的边界只有 45 个阶梯顶点，无法在允许容差内简化；本场景用细网格边界（数百顶点）验证受控简化确实生效。",
+      "outlet_cell": [
+        60,
+        60
+      ],
+      "outlet_lonlat": [
+        116.99538966341815,
+        39.744456258443826
+      ],
+      "outlet_xy": [
+        499605.0,
+        4399395.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 121
+    },
+    "tilted_plane": {
+      "cell_area_m2": 900.0,
+      "dem": "tilted_plane.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 54000.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 60,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 20,
+      "mask_rule": {
+        "type": "row_eq",
+        "value": 7
+      },
+      "note": "严格东向平面：出口(7,59)上游精确 = 行7 的 60 个像元（细长条）。",
+      "outlet_cell": [
+        7,
+        59
+      ],
+      "outlet_lonlat": [
+        117.0091627679422,
+        39.74787986378266
+      ],
+      "outlet_xy": [
+        500785.0,
+        4399775.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "tilted_plane_snap_offset": {
+      "cell_area_m2": 900.0,
+      "dem": "tilted_plane.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 54000.0,
+      "expected_flow_accum_cells": 60,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 60,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": false,
+      "expected_snap_distance_m": 20.0,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "出口已从输入点吸附"
+      ],
+      "height": 20,
+      "mask_rule": {
+        "type": "row_eq",
+        "value": 7
+      },
+      "note": "出口西偏 20 m：应吸附到 (7,59)，吸附距离精确 20 m，累积 60 像元，掩膜仍为行7（吸附报告验证）。",
+      "outlet_lonlat": [
+        117.0089293216279,
+        39.74787988197465
+      ],
+      "outlet_xy": [
+        500765.0,
+        4399775.0
+      ],
+      "snap_radius_m": 90.0,
+      "width": 60
+    },
+    "two_bowl_nodata_hole": {
+      "cell_area_m2": 900.0,
+      "dem": "two_bowl_nodata_hole.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 323100.0,
+      "expected_hole_count": 1,
+      "expected_mask_cells": 359,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "NoData",
+        "分析范围截断"
+      ],
+      "height": 12,
+      "mask_rule": {
+        "exclude_cells": [
+          [
+            5,
+            15
+          ]
+        ],
+        "type": "columns_le",
+        "value": 29
+      },
+      "note": "A 碗内部单个 NoData 像元 (5,15)：四周像元都能绕行到碗心，掩膜 = 列0..29 去掉该像元 = 359，且该像元被掩膜包围形成 1 个洞。",
+      "outlet_cell": [
+        5,
+        21
+      ],
+      "outlet_lonlat": [
+        116.9958562954675,
+        39.74842076317149
+      ],
+      "outlet_xy": [
+        499645.0,
+        4399835.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "two_bowl_nodata_wall": {
+      "cell_area_m2": 900.0,
+      "dem": "two_bowl_nodata.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 303300.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 337,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "NoData",
+        "分析范围截断"
+      ],
+      "height": 12,
+      "mask_rule": {
+        "exclude_block": [
+          4,
+          14,
+          6,
+          16
+        ],
+        "exclude_strips": [
+          [
+            5,
+            0,
+            13
+          ]
+        ],
+        "type": "columns_le",
+        "value": 29
+      },
+      "note": "A 碗内部 3×3 NoData 墙：NoData 阻断汇流，(5,13) 失去所有更低邻居成为局部洼地，行5 列0..13 的来水在此终止（解析推导）。掩膜 = 列0..29 去掉 NoData 块与行5 列0..13 = 360−9−14 = 337 个像元；被排除区域经行5 与图幅西边界连通，因此不是洞。",
+      "outlet_cell": [
+        5,
+        21
+      ],
+      "outlet_lonlat": [
+        116.9958562954675,
+        39.74842076317149
+      ],
+      "outlet_xy": [
+        499645.0,
+        4399835.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "two_bowl_ridge": {
+      "cell_area_m2": 900.0,
+      "dem": "two_bowl_ridge.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 324000.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 360,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 12,
+      "mask_rule": {
+        "type": "columns_le",
+        "value": 29
+      },
+      "note": "两个同曲率抛物面碗；分水岭为碗心垂直平分线 x=29.5（像元中心为整数，无像元落在分水岭上）。A 碗心集水区精确 = 列0..29 全部像元 = 360。",
+      "outlet_cell": [
+        5,
+        21
+      ],
+      "outlet_lonlat": [
+        116.9958562954675,
+        39.74842076317149
+      ],
+      "outlet_xy": [
+        499645.0,
+        4399835.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "two_bowl_ridge_ambiguous_snap": {
+      "cell_area_m2": 900.0,
+      "dem": "two_bowl_ridge.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": true,
+      "expected_area_m2": 324000.0,
+      "expected_hole_count": null,
+      "expected_mask_cells": 360,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": false,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "候选栅格",
+        "出口已从输入点吸附"
+      ],
+      "height": 12,
+      "mask_rule": {
+        "type": "two_bowl_half"
+      },
+      "note": "出口放在分水岭上（两侧碗心汇流累积都是 360），半径 600 m 覆盖两碗心：吸附应选最近/索引最小的 A 碗心并报告候选点不唯一。",
+      "outlet_lonlat": [
+        116.9988327592853,
+        39.7484208312607
+      ],
+      "outlet_xy": [
+        499900.0,
+        4399835.0
+      ],
+      "snap_radius_m": 600.0,
+      "width": 60
+    },
+    "two_bowl_ridge_geo": {
+      "cell_area_m2": null,
+      "dem": "two_bowl_ridge_geo.tif",
+      "dem_crs": "EPSG:4490",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": null,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 360,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断",
+        "重投影"
+      ],
+      "height": 14,
+      "mask_rule": {
+        "type": "expect_cells",
+        "value": 360
+      },
+      "note": "同一地形写成 EPSG:4490 地理坐标：验证地理 DEM → UTM 重投影路径；允许 ±12 像元 / ±3% 面积误差（重采样与格网错位）。",
+      "outlet_cell": [
+        5,
+        21
+      ],
+      "outlet_lonlat": [
+        116.9958562954675,
+        39.74842076317149
+      ],
+      "outlet_xy": [
+        499645.0,
+        4399835.0
+      ],
+      "snap_radius_m": 0.0,
+      "tolerance": {
+        "area_rel": 0.03,
+        "mask_cells": 12
+      },
+      "width": 62
+    },
+    "two_bowl_ridge_outlet_b": {
+      "cell_area_m2": 900.0,
+      "dem": "two_bowl_ridge.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 324000.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 360,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 12,
+      "mask_rule": {
+        "type": "columns_ge",
+        "value": 30
+      },
+      "note": "B 碗心集水区精确 = 列30..59 全部像元 = 360（对称性验证）。",
+      "outlet_cell": [
+        5,
+        38
+      ],
+      "outlet_lonlat": [
+        117.00180922310754,
+        39.74842082303013
+      ],
+      "outlet_xy": [
+        500155.0,
+        4399835.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "valley_converge": {
+      "cell_area_m2": 900.0,
+      "dem": "valley_converge.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 1080000.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 1200,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 20,
+      "mask_rule": {
+        "type": "all"
+      },
+      "note": "南向倾斜 + 向中央河道收敛的 V 形谷，无并列坡度：全图 60×20=1200 个像元都汇入南边界河道出口 (19,30)。用于 GRASS SFD 与 native D8 的二维交叉验证（两者都应精确复现 1200 像元 / 1,080,000 m²）。",
+      "outlet_cell": [
+        19,
+        30
+      ],
+      "outlet_lonlat": [
+        116.99900789966877,
+        39.744636549774384
+      ],
+      "outlet_xy": [
+        499915.0,
+        4399415.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 60
+    },
+    "valley_converge_tall": {
+      "cell_area_m2": 900.0,
+      "dem": "valley_converge_tall.tif",
+      "dem_crs": "EPSG:32650",
+      "expected_ambiguous_snap": false,
+      "expected_area_m2": 1080000.0,
+      "expected_hole_count": 0,
+      "expected_mask_cells": 1200,
+      "expected_no_truncation_warning": false,
+      "expected_snap_disabled": true,
+      "expected_truncated": true,
+      "expected_warnings_any": [
+        "分析范围截断"
+      ],
+      "height": 60,
+      "mask_rule": {
+        "type": "all"
+      },
+      "note": "南北向长条收敛谷（20×60 像元 = 600 m×1800 m），无并列坡度：全部 1200 个像元汇入南边界河道出口 (59,10)。用于复核图竖版分段布局与窄图 x 轴刻度防粘连测试。",
+      "outlet_cell": [
+        59,
+        10
+      ],
+      "outlet_lonlat": [
+        116.99200608781112,
+        39.73382402768378
+      ],
+      "outlet_xy": [
+        499315.0,
+        4398215.0
+      ],
+      "snap_radius_m": 0.0,
+      "width": 20
+    }
+  }
+}

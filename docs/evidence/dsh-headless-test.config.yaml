@@ -1,0 +1,17 @@
+ovital:
+  endpoint: "ws://127.0.0.1:54021"
+  psk: "test-psk"
+  connect_timeout_s: 3.0
+  request_timeout_s: 10.0
+  latlng_type: 1
+storage:
+  data_root: "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/dshtest/data-vision"
+gis:
+  engine: "native"
+  snap_radius_m: 0
+  simplify_tolerance_m: 0
+mcp:
+  image_max_bytes: 4194304
+  max_image_pixels: 1200
+logging:
+  level: "INFO"

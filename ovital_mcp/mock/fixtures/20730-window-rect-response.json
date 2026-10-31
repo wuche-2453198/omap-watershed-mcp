@@ -1,0 +1,17 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.52.2 获取奥维可显示区域-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "值<=0 表示窗体最小化，无法用于配准"
+  },
+  "cmdid": 20730,
+  "msg": {
+    "Left": 765,
+    "Right": 1889,
+    "Top": 497,
+    "Bottom": 1201
+  }
+}

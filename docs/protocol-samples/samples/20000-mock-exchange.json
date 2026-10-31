@@ -1,0 +1,29 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.1 连接奥维互动地图",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "sdk": "omapInterfaceWeb_latest/js/omapinterface.js#onopen 登录",
+    "note": "md5psk 已脱敏；成功时 ret 是版本号（2.3.1.2.1）"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20000,
+    "ret": 0,
+    "msg": {
+      "md5psk": "***"
+    }
+  },
+  "response": {
+    "cmdid": 20000,
+    "ret": 817,
+    "msg": {
+      "AppId": 42,
+      "Simulated": true
+    }
+  }
+}

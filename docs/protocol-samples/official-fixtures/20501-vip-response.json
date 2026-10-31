@@ -1,0 +1,15 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.19.2 获取VIP等级-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "手册未给 OmapLevel 数值与 VIP/SVIP 名称的映射；权限以命令 ret=-5/-7 为准"
+  },
+  "cmdid": 20501,
+  "msg": {
+    "OmapLevel": 9,
+    "LoadOK": 1
+  }
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovital-watershed-mcp"
+version = "0.1.0"
+description = "Local MCP server + GIS pipeline for drawing watershed catchments in Ovital (奥维互动地图) from a user-selected outlet, with review images, draft write-back, measurement and rollback."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+dependencies = [
+  "mcp>=2.3,<3",
+  "websockets>=15",
+  "pydantic>=2.9,<3",
+  "PyYAML>=6",
+  "numpy>=2.0",
+  "scipy>=1.13",
+  "rasterio>=1.4",
+  "shapely>=2.0",
+  "pyproj>=3.7",
+  "matplotlib>=3.9",
+  "pillow>=10",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=0.24", "pyflakes>=3.2"]
+
+[project.scripts]
+ovital-mcp = "ovital_mcp.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["ovital_mcp*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+asyncio_mode = "auto"
+filterwarnings = [
+  "ignore::DeprecationWarning",
+]

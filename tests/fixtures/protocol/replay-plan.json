@@ -1,0 +1,116 @@
+{
+  "_kind": "replay-plan",
+  "_source": {
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "manual_sections": [
+      "2.3.1",
+      "2.3.11",
+      "2.3.12",
+      "2.3.13",
+      "2.3.17",
+      "2.3.18",
+      "2.3.19",
+      "2.3.22",
+      "2.3.24",
+      "2.3.28",
+      "2.3.29",
+      "2.3.31",
+      "2.3.48",
+      "2.3.49",
+      "2.3.51",
+      "2.3.52",
+      "2.3.58"
+    ],
+    "sdk": "omapInterfaceWeb_latest/omapInterfaceWeb/js/{omapinterface,omapobj}.js",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "script": "scripts/replay_protocol.py",
+  "steps": [
+    {
+      "name": "official_fixtures",
+      "cmdid": null,
+      "assert": "27 个官方夹具全部可编解码/解析"
+    },
+    {
+      "name": "login",
+      "cmdid": 20000,
+      "assert": "ret>0（版本号语义，手册 2.3.1.2.1）"
+    },
+    {
+      "name": "probe_capabilities",
+      "cmdid": null,
+      "assert": "只读探测，不写地图；status=ok"
+    },
+    {
+      "name": "write_draft_tree",
+      "cmdid": 20112,
+      "assert": "返回 30/13/7 三类对象（真实设备可能不含 30，待实测）"
+    },
+    {
+      "name": "read_back_shape",
+      "cmdid": 20101,
+      "assert": "顶点与写入一致，max_delta_deg<=1e-7"
+    },
+    {
+      "name": "shape_metrics",
+      "cmdid": 20802,
+      "assert": "面积/周长与独立 GIS 计算一致（1e-6 容差）"
+    },
+    {
+      "name": "get_map_image",
+      "cmdid": 20301,
+      "assert": "PNG + SIMULATED MAP 水印 + 元数据"
+    },
+    {
+      "name": "get_contours",
+      "cmdid": 20303,
+      "assert": "只回元数据，geometry_format_unverified=true"
+    },
+    {
+      "name": "screen_corners",
+      "cmdid": 20016,
+      "assert": "中心/角点可解析"
+    },
+    {
+      "name": "viewport",
+      "cmdid": 20730,
+      "assert": "窗体区域 + 像素比例"
+    },
+    {
+      "name": "find_objects",
+      "cmdid": 20107,
+      "assert": "按名称找到草稿文件夹"
+    },
+    {
+      "name": "delete_objects",
+      "cmdid": 20103,
+      "assert": "删除后回读为空"
+    }
+  ],
+  "fault_scenarios": [
+    "drop_on_write",
+    "timeout_on",
+    "duplicate_20112",
+    "permission_denied_20301"
+  ],
+  "tolerances": {
+    "roundtrip_deg": 1e-07,
+    "metrics_area_m2": 1e-06,
+    "metrics_perimeter_km": 1e-06
+  },
+  "required_evidence": [
+    "replay-evidence.json",
+    "samples/",
+    "official-fixtures/",
+    "simulated-map-20301.png",
+    "README.md"
+  ],
+  "write_response_styles": [
+    "manual_flat",
+    "sdk_nested"
+  ],
+  "note": "回放结果只证明 offline_simulated；真实 Windows 奥维联机仍未验证"
+}

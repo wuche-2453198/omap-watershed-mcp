@@ -1,0 +1,35 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.12.2 设置收藏夹对象-返回数据示例",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "手册示例是扁平 ObjItems[]；官方样例 omapinterface.js 按 msg.ObjItems[0].Object.ObjectDetail.ObjChildren 读取（嵌套）→ 两种形态都要兼容，真实形态待实测"
+  },
+  "cmdid": 20112,
+  "msg": {
+    "ObjItems": [
+      {
+        "Type": 7,
+        "ObjID": "262232699",
+        "ParentID": 0
+      },
+      {
+        "Type": 8,
+        "ObjID": "1269695656",
+        "ParentID": 0
+      },
+      {
+        "Type": 13,
+        "ObjID": "1778665247",
+        "ParentID": 0
+      },
+      {
+        "Type": 11,
+        "ObjID": "131253234",
+        "ParentID": 0
+      }
+    ]
+  }
+}

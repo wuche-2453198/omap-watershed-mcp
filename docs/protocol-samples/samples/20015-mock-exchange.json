@@ -1,0 +1,27 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.49 监测奥维对象改变（20015 事件）",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": null,
+  "response": {
+    "cmdid": 20015,
+    "ret": null,
+    "msg": {
+      "Version": 0,
+      "Flag": 0,
+      "ListID": [
+        1000000001,
+        1000000002,
+        1000000003
+      ],
+      "Simulated": true
+    }
+  }
+}

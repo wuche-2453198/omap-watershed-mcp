@@ -1,0 +1,22 @@
+- insert:
+    - id: mcp-ovital
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: ovital
+        transport: stdio
+        command: '/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.venv/bin/python'
+        args: ['-m', 'ovital_mcp']
+        cwd: '/Users/huangsirsmacbookairm5/Public/code/project/omap mcp'
+        env:
+          OVITAL_MCP_CONFIG: '/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/dshtest/ovital.yaml'
+          PYTHONIOENCODING: 'utf-8'
+          PYTHONUTF8: '1'
+        toolCallTimeoutMs: 60000
+        failOnStartupError: false
+
+# 本地验证用：headless 会话没有交互式 workspace，project-dsh 根不会自动挂载；
+# 显式把项目 .dsh/skills 加到 skill-filesystem 的 customSkillDirs（官方配置项）。
+- id: skill-filesystem
+  config:
+    customSkillDirs:
+      - '/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.dsh/skills'

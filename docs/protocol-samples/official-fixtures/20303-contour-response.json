@@ -1,0 +1,27 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.31.2 获取等高线-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "手册只给元数据字段；字段名 EvevValue 是手册拼写错误（请求字段为 ElevValue）；等高线几何/高程数组格式手册未定义 → 待实测"
+  },
+  "cmdid": 20303,
+  "msg": {
+    "Ret": 0,
+    "MapID": 1,
+    "Value": 1,
+    "x_lng1": 697827.09,
+    "y_lat1": 2873083.29,
+    "x_lng2": 712790.02,
+    "y_lat2": 712790.02,
+    "CoordType": 2,
+    "MapLevel": 0,
+    "EvevValue": 30,
+    "CheckFlag": 0,
+    "CheckResult": 3,
+    "NeedVip": 9,
+    "Part": 0
+  }
+}

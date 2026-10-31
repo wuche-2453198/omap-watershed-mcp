@@ -1,0 +1,49 @@
+# OMAP Watershed MCP — conda-forge 环境定义（Windows 推荐；Linux/macOS 同源）
+#
+# 创建：
+#   conda env create -f environment.yml -n omap-mcp
+#   conda run -n omap-mcp python -m pip install -e .
+# 锁版本（部署后归档，回滚/复现以锁文件为准）：
+#   conda env export -n omap-mcp > environment.lock.yml
+#
+# 锁版本策略：
+# - 本文件固定“Python 主次版本 + 各依赖主版本范围”，保证可解析、可升级、跨平台；
+# - 部署验证通过后，用 `conda env export` 生成精确锁文件并归档（含 subdir/build），
+#   Windows 目标机与开发机版本可能不同，不把任一平台的解析结果当作另一平台已验证；
+# - 原生 GIS 栈（GDAL/PROJ/GEOS）全部来自 conda-forge，避免与 pip wheel/系统 DLL 混用；
+# - GRASS 不放进本环境：单独 `conda create -n omap-grass -c conda-forge grass=8.5`，
+#   避免其依赖与主环境冲突（详见 docs/install-windows.md）。
+# - 未安装的包会被运行期显式报错（例如 GeoPackage 导出需要可选 fiona），不静默降级。
+
+name: omap-mcp
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.12
+  - pip
+
+  # GIS / 科学计算（原生依赖统一由 conda-forge 提供）
+  - numpy>=2.0,<3
+  - scipy>=1.13,<2
+  - rasterio>=1.4,<1.6
+  - shapely>=2.0,<3
+  - pyproj>=3.7,<4
+
+  # 复核图 / 配置 / 协议 / 测试
+  - matplotlib>=3.9,<4
+  - pillow>=10,<14
+  - pyyaml>=6,<7
+  - pydantic>=2.9,<3
+  - websockets>=15,<18
+  - pytest>=8,<10
+
+  - pip:
+      # 纯 Python 包走 pip：MCP 官方 Python SDK（PyPI 上为 mcp>=2.3,<3）
+      - mcp>=2.3,<3
+      - pytest-asyncio>=0.24
+      # 可选：GeoPackage 导出（export_result 的 gpkg 路径需要 fiona；
+      # 不装时工具会显式报错，不承诺 gpkg 一定可用）
+      # - fiona>=1.10

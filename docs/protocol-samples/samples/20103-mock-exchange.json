@@ -1,0 +1,30 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.13 删除收藏夹对象",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "NoGroup 字段；成功响应形态手册未给（待实测）"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20103,
+    "ret": 0,
+    "msg": {
+      "NoGroup": 0,
+      "ListID": [
+        1000000001
+      ]
+    }
+  },
+  "response": {
+    "cmdid": 20103,
+    "ret": null,
+    "msg": {
+      "Simulated": true
+    }
+  }
+}

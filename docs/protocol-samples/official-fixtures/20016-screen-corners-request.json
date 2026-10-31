@@ -1,0 +1,15 @@
+{
+  "_kind": "request",
+  "_source": {
+    "manual_section": "2.3.58.1 获取屏幕中心点、左上角、右下角坐标-请求数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "ReqCoordType 是独立枚举：0=根据奥维决定 1=真实经纬度 2=GCJ-02"
+  },
+  "cmdid": 20016,
+  "ret": 0,
+  "msg": {
+    "ReqCoordType": 2
+  }
+}

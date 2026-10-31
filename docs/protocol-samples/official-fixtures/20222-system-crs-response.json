@@ -1,0 +1,42 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.51.2 获取奥维系统坐标系参数-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "CoordType 是独立枚举（2=经纬度 4=横轴墨卡托）；iPrjType 0=WGS84 1=Xian80 2=Krasovsky_1940 3=UTM 4=CGCS2000 5=CustomType"
+  },
+  "cmdid": 20222,
+  "msg": {
+    "CoordType": 4,
+    "iPrjType": 0,
+    "PrjName": "",
+    "strPrjType": "",
+    "Geogcs": "",
+    "DATUM": "",
+    "SPHEROID": "",
+    "PRIMEM": "",
+    "PROJECTION": "",
+    "SemimajorAxis": 6378245.0,
+    "SemiminorAxis": 0.0,
+    "InverseFlattening": 298.5,
+    "PrimeMeridian": 0.0,
+    "AngularUnit": 0.0,
+    "LinearUnit": 0.0,
+    "FalseEasting": 500000.0,
+    "FalseNorthing": 0.0,
+    "CentralMeridian": 105.0,
+    "ScaleFactor": 1.0,
+    "LatitudeOfOrigin": 0.0,
+    "LatitudeOfCenter": 0.0,
+    "LongitudeOfCenter": 0.0,
+    "StandardParallel_1": 0.0,
+    "StandardParallel_2": 0.0,
+    "Latitude_Of_1st_Point": 0.0,
+    "Latitude_Of_2nd_Point": 0.0,
+    "Longitude_Of_1st_Point": 0.0,
+    "Longitude_Of_2nd_Point": 0.0,
+    "Azimuth": 0.0
+  }
+}

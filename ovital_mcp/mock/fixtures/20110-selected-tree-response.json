@@ -1,0 +1,87 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.18.2 获取奥维端选中的收藏夹对象树形结构详细信息-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "根节点是容器（ObjID='9'，Name=''），选中对象在 Object.ObjectDetail.ObjChildren 里；手册未记载分片字段"
+  },
+  "cmdid": 20110,
+  "msg": {
+    "ObjItems": [
+      {
+        "Type": 30,
+        "ObjID": "9",
+        "ParentID": 0,
+        "Object": {
+          "Name": "",
+          "Type": 30,
+          "ObjectDetail": {
+            "Child": 1,
+            "LoadOk": 1,
+            "SaveMerge": 0,
+            "Group": 0,
+            "AutoLoad": 1,
+            "ShowLevel": 1,
+            "ShowLevelMax": 0,
+            "Crypt": 0,
+            "Share": 0,
+            "ReadOnly": 0,
+            "NotHotId": 0,
+            "Relate": 0,
+            "ObjChildren": [
+              {
+                "Type": 30,
+                "SrvID": "4162659769379758491",
+                "ObjID": "738224536",
+                "tmModify": "2019/08/12?10:30:25",
+                "ParentID": 1,
+                "Object": {
+                  "Name": "文件夹1",
+                  "Type": 30,
+                  "ObjectDetail": {
+                    "Child": 1,
+                    "ObjChildren": [
+                      {
+                        "Type": 7,
+                        "SrvID": "9108511026562079285",
+                        "ObjID": "441725141",
+                        "tmModify": "2019/03/06?18:55:11",
+                        "ParentID": 738224536,
+                        "Object": {
+                          "Name": "标签",
+                          "Type": 7,
+                          "Comment": "}",
+                          "ObjectDetail": {
+                            "Lat": 38.461403,
+                            "Lng": 106.321734,
+                            "Gcj02": 1,
+                            "Altitude": 0,
+                            "EditMode": 0,
+                            "OverlayIdx": 0,
+                            "TxtType": 1,
+                            "ShowLevel": 1,
+                            "ShowLevelMax": 0,
+                            "SignEvent": {
+                              "Radius": 0,
+                              "ShowClr": 0
+                            },
+                            "SignPic": {
+                              "SignPic": 1,
+                              "AlignFlag": 0
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

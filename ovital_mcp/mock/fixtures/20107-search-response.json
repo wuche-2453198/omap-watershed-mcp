@@ -1,0 +1,33 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.22.2 查找奥维对象-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "ListID 只含 ObjID/ObjType，不含名称；要名称需再查 20101"
+  },
+  "cmdid": 20107,
+  "msg": {
+    "ReqVer": 0,
+    "SrhOpt": 0,
+    "ObjType": 7,
+    "ParentID": 0,
+    "ShapeSelect": 0,
+    "NoChild": 0,
+    "MaxCnt": 0,
+    "SrhTxt": "天桥",
+    "SrhValue": 1,
+    "NoCase": 0,
+    "ListID": [
+      {
+        "ObjID": 1968783191,
+        "ObjType": 7
+      },
+      {
+        "ObjID": 283412523,
+        "ObjType": 7
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.12.2 返回数据 + 官方样例 omapinterface.js 读取路径",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_sample",
+    "verified_against_real_device": false,
+    "official_sample_sdk": "omapInterfaceWeb_latest/omapInterfaceWeb/js/omapinterface.js",
+    "note": "官方样例读取 msg.ObjItems[0].Object.ObjectDetail.ObjChildren；手册示例没有该嵌套形态。本夹具用于验证两种形态兼容（待实测）"
+  },
+  "cmdid": 20112,
+  "msg": {
+    "ObjItems": [
+      {
+        "Type": 30,
+        "ObjID": "1778665247",
+        "ParentID": 0,
+        "Object": {
+          "Name": "OMAP-MCP 草稿",
+          "Type": 30,
+          "ObjectDetail": {
+            "Child": 1,
+            "ObjChildren": [
+              {
+                "Type": 13,
+                "ObjID": "1778665248",
+                "ParentID": 1778665247
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

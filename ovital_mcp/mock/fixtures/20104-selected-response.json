@@ -1,0 +1,27 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.17.2 获取奥维端选中的收藏夹对象基本信息-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "手册表写 ret=奥维版本号，但示例省略 ret；ObjID 在示例中是 int"
+  },
+  "cmdid": 20104,
+  "ret": 817,
+  "msg": {
+    "Count": 2,
+    "ObjList": [
+      {
+        "ObjID": 738224536,
+        "Type": 30,
+        "Name": "文件夹"
+      },
+      {
+        "ObjID": 441725141,
+        "Type": 7,
+        "Name": "标签"
+      }
+    ]
+  }
+}

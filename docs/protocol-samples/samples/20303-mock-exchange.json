@@ -1,0 +1,69 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.31 获取等高线",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "手册只给元数据字段，未定义等高线数据数组格式（待实测）"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20303,
+    "ret": 0,
+    "msg": {
+      "ReqMapDatas": [
+        {
+          "MapID": 1,
+          "Value": 1,
+          "x_lng1": 106.56,
+          "y_lat1": 39.0,
+          "x_lng2": 106.59,
+          "y_lat2": 39.03,
+          "CoordType": 0,
+          "MapLevel": 12,
+          "ElevValue": 50,
+          "CheckFlag": 0
+        }
+      ],
+      "ReqContours": [
+        {
+          "MapID": 1,
+          "Value": 1,
+          "x_lng1": 106.56,
+          "y_lat1": 39.0,
+          "x_lng2": 106.59,
+          "y_lat2": 39.03,
+          "CoordType": 0,
+          "MapLevel": 12,
+          "ElevValue": 50,
+          "CheckFlag": 0
+        }
+      ]
+    }
+  },
+  "response": {
+    "cmdid": 20303,
+    "ret": null,
+    "msg": {
+      "Ret": 0,
+      "MapID": 1,
+      "Value": 1,
+      "x_lng1": 106.56,
+      "y_lat1": 39.0,
+      "x_lng2": 106.59,
+      "y_lat2": 39.03,
+      "CoordType": 0,
+      "MapLevel": 12,
+      "EvevValue": 50,
+      "CheckFlag": 0,
+      "CheckResult": 3,
+      "NeedVip": 9,
+      "Part": 0,
+      "MockNote": "手册 2.3.31 未定义等高线数据数组格式；模拟器只回元数据（待实测）",
+      "Simulated": true
+    }
+  }
+}

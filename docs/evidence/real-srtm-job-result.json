@@ -1,0 +1,234 @@
+{
+ "note": "用修复后的 export_result 复现生成（首次运行 job j-20261029-180027-722b33 的导出报告早于 export 修复，F-14）",
+ "job_id": "j-20261029-181428-9c0ac0",
+ "task_id": "t-20261029-181428-e4f2ce",
+ "status": true,
+ "geometry_identical_to_archived_boundary": true,
+ "dem": {
+  "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/realdem/beijing_west_srtm.tif",
+  "sha256": "f4bd61497a84f6bb1fe34a9f6d51764f386345dcd809f333d8877f37a8c7a11f",
+  "crs_epsg": 4326,
+  "res_approx_m": [
+   23.860394518459916,
+   30.715
+  ]
+ },
+ "result": {
+  "ok": true,
+  "error": null,
+  "boundary_geojson": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/boundary.geojson",
+  "mask_geotiff": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/mask.tif",
+  "area_m2": 19673902.93067287,
+  "perimeter_m": 28797.62639426929,
+  "geometry_valid": true,
+  "multipart": false,
+  "hole_count": 0,
+  "outlet_input": [
+   115.6736125,
+   39.8525625
+  ],
+  "outlet_used": [
+   115.67343660332646,
+   39.85251030352568
+  ],
+  "snap_distance_m": 16.125981511414434,
+  "flow_accum_cells": 25857,
+  "cell_area_m2": 760.8733778347176,
+  "metric_crs": "EPSG:32650",
+  "engine_used": "native",
+  "engine_version": "native-d8/1 (numpy 2.5.4)",
+  "analysis_extent_lonlat": [
+   114.97087416758738,
+   38.98682254715339,
+   116.01457580118,
+   40.01297696931619
+  ],
+  "boundary_crs": "EPSG:4490",
+  "outlet_vertex_index": 517,
+  "truncated": false,
+  "warnings": [
+   "[DEM] CRS=EPSG:4326，地理坐标系，官方轴序=latlon；栅格读取按 x=经度/easting、y=纬度/northing（rasterio 约定）",
+   "[DEM] DEM 是地理坐标系，分辨率以「度」为单位；面积/距离/吸附必须投影到米制 CRS（引擎会自动处理并记录）",
+   "[DEM] 分辨率 0.000277778°×0.000277778°，在中心纬度约 23.9 m×30.7 m",
+   "[DEM] 垂直基准未知：文件未声明垂直基准，无法判断高程是大地高（椭球高）还是正高/正常高；同一区域内混用不同基准会带来米级到数十米级系统偏差。Copernicus GLO-30 官方为 EGM2008 正高，但 GeoTIFF 本身不声明，需按数据源文档另行确认。",
+   "[DEM] 无法从文件判断数据是 DSM 还是 DTM：若为 DSM（如 Copernicus GLO-30），树高/建筑会抬高地表，分水岭可能偏移，工程边界应结合实测/等高线复核",
+   "分析投影：EPSG:32650；分析栅格 3186×4077，分辨率 27.5839 m，像元面积 760.873 m²",
+   "DEM 已重投影/重采样到 EPSG:32650（bilinear）；重采样会给高程与坡度带来小幅平滑，窄山脊/平缓分水岭需复核",
+   "出口吸附（native）：输入点 (386535.00, 4412235.00) → 像元 (行 632, 列 2165)，距离 16.13 m，半径内最大汇流累积 25857 像元",
+   "出口已从输入点吸附到汇流累积最大的栅格（16.13 m）：计算使用吸附后的出口；原始出口与吸附出口均记录在 provenance",
+   "河网：汇流累积 ≥ 200 像元的河道，链化后 70 条折线（仅用于复核展示）",
+   "出口所在栅格没有出流方向（洼地/平地/分析范围边界）：上游范围以该栅格为终止；引擎不填洼，若该处是真实洼地/水库/人工拦蓄，请人工确认上游边界是否应另行定义"
+  ]
+ },
+ "review_figures": [
+  {
+   "figure_id": "overview",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/overview.png",
+   "segment_id": null,
+   "bbox_lonlat": [
+    114.97087416758738,
+    38.98682254715339,
+    116.01457580118,
+    40.01297696931619
+   ],
+   "view_bbox_lonlat": [
+    114.89661625211927,
+    38.9310343123862,
+    116.0718244302708,
+    40.06849204270447
+   ],
+   "sha256": "4a5e33895ccf99e32dc19996c0208581668b7df89c165463826a52b0cd60bb60"
+  },
+  {
+   "figure_id": "seg-01",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-01.png",
+   "segment_id": 1,
+   "bbox_lonlat": [
+    115.67231223345532,
+    39.8518909834263,
+    115.67765269013847,
+    39.87526143498468
+   ],
+   "view_bbox_lonlat": [
+    115.66434215989676,
+    39.84607643289506,
+    115.68596872089877,
+    39.881100946345484
+   ],
+   "sha256": "547668f3de99a8d2bca4783785aad172300cc6e86ee2be55408f2dcea34e371a"
+  },
+  {
+   "figure_id": "seg-02",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-02.png",
+   "segment_id": 2,
+   "bbox_lonlat": [
+    115.66268137760807,
+    39.87526143498468,
+    115.67504213651517,
+    39.88568586820159
+   ],
+   "view_bbox_lonlat": [
+    115.65903691493531,
+    39.87210564699642,
+    115.67902167196019,
+    39.88848157791334
+   ],
+   "sha256": "0cb422cabe98490086705751c539c34d19f0b7c7a1eda4f35a0d07e661a3eb22"
+  },
+  {
+   "figure_id": "seg-03",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-03.png",
+   "segment_id": 3,
+   "bbox_lonlat": [
+    115.6474595753019,
+    39.86511883235975,
+    115.66407752472693,
+    39.87812458520726
+   ],
+   "view_bbox_lonlat": [
+    115.64304249141183,
+    39.861731211026026,
+    115.66922220405243,
+    39.88165870265671
+   ],
+   "sha256": "b0c0db68707048746f3d8d289b8590dae6edeadec66bd301e088eabc99eb2163"
+  },
+  {
+   "figure_id": "seg-04",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-04.png",
+   "segment_id": 4,
+   "bbox_lonlat": [
+    115.62889618757127,
+    39.8625544427483,
+    115.6474595753019,
+    39.87484676869645
+   ],
+   "view_bbox_lonlat": [
+    115.62374718147981,
+    39.85852180802795,
+    115.65283747906963,
+    39.87873564859808
+   ],
+   "sha256": "9cc170dbad0fa7825a013bf5e77b98a4a5fa3d61319d8ef41b1ce5702d890de8"
+  },
+  {
+   "figure_id": "seg-05",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-05.png",
+   "segment_id": 5,
+   "bbox_lonlat": [
+    115.60851789270959,
+    39.84640731431207,
+    115.62890113369806,
+    39.8625544427483
+   ],
+   "view_bbox_lonlat": [
+    115.60270034077885,
+    39.84236611414399,
+    115.63477604358934,
+    39.8668429454756
+   ],
+   "sha256": "96ddf37b4712cb34ec84726dafd3ca287bf1f3539cbea622aa1874a5c3e742b9"
+  },
+  {
+   "figure_id": "seg-06",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-06.png",
+   "segment_id": 6,
+   "bbox_lonlat": [
+    115.60704175080755,
+    39.83443258873654,
+    115.62945471178391,
+    39.84640731431207
+   ],
+   "view_bbox_lonlat": [
+    115.60108370316199,
+    39.82967141874643,
+    115.63534921835992,
+    39.85119368949362
+   ],
+   "sha256": "b5bde3817a1d837c3905b02df0a295140001751802907a570d83f17ef8d8ddf5"
+  },
+  {
+   "figure_id": "seg-07",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-07.png",
+   "segment_id": 7,
+   "bbox_lonlat": [
+    115.62944977252464,
+    39.831456399416915,
+    115.6558480542442,
+    39.836775296816555
+   ],
+   "view_bbox_lonlat": [
+    115.62254781791387,
+    39.82570204505207,
+    115.66314569982974,
+    39.84207500650218
+   ],
+   "sha256": "a69a0b30f24567d13acc7f9a84bebf005c9e9a926e6c16942766c9fd8891ecfa"
+  },
+  {
+   "figure_id": "seg-08",
+   "path": "/Users/huangsirsmacbookairm5/Public/code/project/omap mcp/.cache/leadtest/data-regen/jobs/j-20261029-181428-9c0ac0/artifacts/review/seg-08.png",
+   "segment_id": 8,
+   "bbox_lonlat": [
+    115.65584320973394,
+    39.836775296816555,
+    115.67361452914804,
+    39.8518909834263
+   ],
+   "view_bbox_lonlat": [
+    115.65032158900797,
+    39.832740005250514,
+    115.67912955626949,
+    39.85592530700364
+   ],
+   "sha256": "7dbc5145045bc8ae152dd726a07bdc841e5326674493e103be774d7979ad5357"
+  }
+ ],
+ "exports": {
+  "report_sha256": "daab42541401761c492d3bbc82eb2edd2154684e89ea7feff6f09032a6438800",
+  "geojson_sha256": "f53b3ea3f84483b28ae57530950ede246df0e9d0eb303ddc98ecc5a6c45836f6"
+ },
+ "reproducibility": {
+  "note": "两次独立运行 job j-...180027 与 j-...181428 几何坐标哈希一致、面积/周长逐位一致、DEM SHA256 一致；boundary GeoJSON 整体哈希因属性含 job_id/时间而不同（几何相同）"
+ }
+}

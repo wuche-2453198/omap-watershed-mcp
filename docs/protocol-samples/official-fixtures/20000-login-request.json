@@ -1,0 +1,16 @@
+{
+  "_kind": "request",
+  "_source": {
+    "manual_section": "2.3.1.1 连接奥维互动地图-请求数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "official_sample_sdk": "omapInterfaceWeb_latest/omapInterfaceWeb/js/omapinterface.js#onopen 登录",
+    "note": "md5psk 直接采用手册 2.3.1.1 示例值 E10ADC3949BA59AB（= md5('123456').upper()[:16]，仅测试用；禁止真实凭据）"
+  },
+  "cmdid": 20000,
+  "ret": 0,
+  "msg": {
+    "md5psk": "E10ADC3949BA59AB"
+  }
+}

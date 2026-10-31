@@ -1,0 +1,58 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.4.8 Shape 结构体示例数据 + 2.3.11.2 返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "Latlng 为扁平数组且纬度在前（39.01 北纬、106.57 东经）；该示例只有 2 个点，按 2.4.8 说明表示圆/扇形/矩形，不是多边形"
+  },
+  "cmdid": 20101,
+  "msg": {
+    "ObjItems": [
+      {
+        "Type": 13,
+        "ObjID": "627700251",
+        "ParentID": 0,
+        "SrvID": "7647106613611937263",
+        "tmModify": "2019/03/07?16:08:38",
+        "Object": {
+          "Name": "Shape",
+          "Type": 13,
+          "Comment": "Shape",
+          "ObjectDetail": {
+            "Gcj02": 1,
+            "OverlayIdx": 0,
+            "ShowLevel": 1,
+            "ShowLevelMax": 0,
+            "OuterRgnIdx": 0,
+            "EditMode": 1,
+            "ShowFlag": 0,
+            "LineClr": 16711680,
+            "LineWidth": 1,
+            "LineAlpha": 50,
+            "AreaClr": 16711680,
+            "AreaAlpha": 50,
+            "StartAngle": 180,
+            "EndAngle": 180,
+            "FillType": 0,
+            "FillSubType": 0,
+            "FillPattern": 0,
+            "FillChgClr": 16777215,
+            "FillRotate": 0,
+            "FillScale": 0,
+            "FillOffsetX": 0,
+            "FillOffsetY": 0,
+            "Mtp": 2,
+            "Latlng": [
+              39.01064751,
+              106.57287598,
+              38.52668162,
+              107.10571289
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

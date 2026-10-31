@@ -1,0 +1,26 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.19 获取VIP等级",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20501,
+    "ret": 0,
+    "msg": {}
+  },
+  "response": {
+    "cmdid": 20501,
+    "ret": null,
+    "msg": {
+      "OmapLevel": 9,
+      "LoadOK": 1,
+      "Simulated": true
+    }
+  }
+}

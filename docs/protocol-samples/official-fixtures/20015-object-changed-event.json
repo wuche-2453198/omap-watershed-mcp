@@ -1,0 +1,19 @@
+{
+  "_kind": "event",
+  "_source": {
+    "manual_section": "2.3.49.2 监测奥维对象改变-返回数据(20015)",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "需先用 20014 注册监听；Flag 0=添加或修改 1=删除"
+  },
+  "cmdid": 20015,
+  "msg": {
+    "Version": 0,
+    "Flag": 1,
+    "ListID": [
+      1307408641,
+      1836892915
+    ]
+  }
+}

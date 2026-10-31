@@ -1,0 +1,15 @@
+{
+  "_kind": "request",
+  "_source": {
+    "manual_section": "2.3.11.1 获取收藏夹对象-请求数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false
+  },
+  "cmdid": 20101,
+  "ret": 0,
+  "msg": {
+    "ObjID": 738224536,
+    "LatlngType": 2
+  }
+}

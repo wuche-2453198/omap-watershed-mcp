@@ -1,0 +1,15 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.1.2.2 连接失败",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "手册示例 errmsg 为 'Pre-shared?key?error'，? 是 HTML 转义残留"
+  },
+  "cmdid": 20000,
+  "ret": 0,
+  "msg": {
+    "errmsg": "Pre-shared?key?error"
+  }
+}

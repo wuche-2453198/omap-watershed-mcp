@@ -1,0 +1,29 @@
+{
+  "_kind": "request",
+  "_source": {
+    "manual_section": "2.3.31.1 获取等高线-请求数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "official_sample_sdk": "omapInterfaceWeb_latest/omapInterfaceWeb/js/omapobj.js BuildReqGetContour",
+    "note": "手册表数组名写 ReqMapDatas，示例与官方样例写 ReqContours"
+  },
+  "cmdid": 20303,
+  "ret": 0,
+  "msg": {
+    "ReqContours": [
+      {
+        "MapID": 1,
+        "Value": 1,
+        "x_lng1": 697827.09,
+        "y_lat1": 2873083.29,
+        "x_lng2": 712790.02,
+        "y_lat2": 712790.02,
+        "CoordType": 2,
+        "MapLevel": 12,
+        "ElevValue": 30,
+        "CheckFlag": 0
+      }
+    ]
+  }
+}

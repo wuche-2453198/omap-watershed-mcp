@@ -1,0 +1,102 @@
+# OMAP Watershed MCP — 配置示例
+#
+# 使用方式：
+#   Windows: copy ovital_mcp\dsh\config.example.yaml C:\work\omap-mcp\config\ovital.yaml
+#   POSIX  : cp ovital_mcp/dsh/config.example.yaml config/ovital.yaml
+# 然后按本机实际修改路径/端口；配置文件由 MCP 通过环境变量 OVITAL_MCP_CONFIG 定位
+# （见 ovital.cordis.yml），也可以在项目根目录放 config/ovital.yaml 让默认探测命中。
+#
+# 安全：
+# - 预共享密钥（PSK）只写在这个配置的 `ovital.psk_file` 指向的单独文件里，密钥文件
+#   不要放进仓库、不要提交 Git、不要写进 DSH patch 或环境变量。
+# - 本文件是示例，`psk` 字段故意保持注释状态；不要把真实密钥填进本文件。
+# - Windows 用当前用户 ACL 限制密钥文件；POSIX 用 chmod 600（见 docs/install-windows.md）。
+#
+# 字段说明以 ovital_mcp/config.py 的模型为准（pydantic，extra="forbid"：
+# 未列出的键会报配置错误，不要臆造字段）。
+
+ovital:
+  # 奥维 Windows 桌面端“系统 → 系统设置 → 高级 → 第三方接口（窗口消息+Websocket）”
+  # 中配置的 WebSocket 地址。端口必须与客户端设置一致；官方手册中的 7699 只是示例，
+  # 不是默认值，本项目不自造默认端口。
+  endpoint: "ws://127.0.0.1:7699"
+
+  # 预共享密钥文件（推荐）。文件首行即密钥，允许存在末尾空白，读取时 strip。
+  # 占位路径，务必替换；密钥文件不放在仓库内。
+  psk_file: "C:/work/omap-secrets/ovital_psk.txt"
+
+  # 直接写明文密钥（不推荐，仅用于临时排查；优先级低于 psk_file 的语义以 config.py 为准）。
+  # psk: "REPLACE_ME"
+
+  connect_timeout_s: 5.0
+  request_timeout_s: 10.0
+
+  # 读取对象时请求的坐标语义（手册 2.2.2 LatlngType）：1=CGCS2000 地理坐标。
+  # 不建议改成 0（系统坐标系），否则结果依赖用户奥维设置，可复现性差。
+  latlng_type: 1
+
+  # 写 Shape 时 ObjectDetail.Gcj02 取值（手册 2.4.8）：0=CGCS2000，1=GCJ-02，2=平面坐标系。
+  shape_gcj02: 0
+
+  # 是否允许用公开近似算法做 GCJ-02 <-> CGCS2000 自动转换。默认 false：
+  # 坐标语义不一致时应先要求用户改用 LatlngType=1 读取，而不是悄悄做偏移。
+  allow_gcj02_conversion: false
+
+  # 写草稿时使用的收藏夹根文件夹名（仅在显式调用写工具时才创建）。
+  draft_root_folder: "OMAP-MCP 草稿"
+
+gis:
+  # 引擎选择：auto（优先 GRASS，其次内置 native D8）| native | grass。
+  # 实际使用的引擎与版本会写入 provenance，可追溯。
+  engine: "auto"
+
+  # GRASS 可执行文件路径或命令名。可选；native 引擎不依赖 GRASS。
+  # Windows 下通常指向 conda 环境里的 grass 启动器（实际文件名以安装产物为准，
+  # 本项目未在 Windows 实机验证）；留 "grass" 表示依赖 PATH。
+  grass_cmd: "grass"
+
+  # 出口吸附搜索半径（米）。只在半径内吸附到汇流累积更大的河道栅格。
+  snap_radius_m: 90.0
+
+  # 分析分辨率（米）；null 表示保持 DEM 原始分辨率。
+  target_res_m: null
+
+  # 面积/距离计算用的米制 CRS；null 表示按出口位置自动选择 UTM 分带。
+  # 绝不能用 EPSG:4490 地理坐标直接计算面积。
+  metric_crs: null
+
+  min_accum_cells: 3
+  simplify_tolerance_m: 0.0
+
+  # 计算量上限（栅格数）。超过时任务显式失败而不是拖死机器。
+  max_cells: 36000000
+
+  # 单任务超时（秒）。长任务用 job 轮询，不要靠一次 MCP 调用等结果。
+  job_timeout_s: 1800
+
+  keep_intermediate: true
+
+storage:
+  # 任务/成果/快照/日志根目录。示例放在部署目录下；也可指向独立数据盘。
+  data_root: "C:/work/omap-mcp/data"
+  retention_days: 30
+
+mcp:
+  # 复核图上限：DSH 侧每图有大小与像素限制，超限会被拒绝投影成诊断文本。
+  image_max_bytes: 4194304
+  max_image_pixels: 1600
+  job_poll_hint_s: 2.0
+
+# 模拟奥维服务器（仅本机离线联调；MCP 不会因为 enabled 自动启动它，
+# 需要显式运行 scripts/run_mock_ovital.py）。真实部署保持 enabled: false。
+mock:
+  enabled: false
+  host: "127.0.0.1"
+  port: 0
+  psk_file: "C:/work/omap-secrets/mock_psk.txt"
+
+logging:
+  level: "INFO"
+  # null 表示只写 stderr（MCP 的 stdout 只能输出协议帧）；
+  # 配成文件时日志不会污染协议，也便于脱敏审查。
+  file: "C:/work/omap-mcp/data/logs/ovital_mcp.log"

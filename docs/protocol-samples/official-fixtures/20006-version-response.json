@@ -1,0 +1,13 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.24.2 获取奥维互动地图版本-返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "成功 ret=版本号"
+  },
+  "cmdid": 20006,
+  "ret": 817,
+  "msg": {}
+}

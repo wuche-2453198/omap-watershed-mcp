@@ -1,0 +1,50 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.29 获取地图图片数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "Data 为模拟 PNG（已截断）；真实图片需 SVIP 且格式为 base64 PNG"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20301,
+    "ret": 0,
+    "msg": {
+      "ReqMapDatas": [
+        {
+          "x_lng1": 106.56,
+          "y_lat1": 39.0,
+          "x_lng2": 106.59,
+          "y_lat2": 39.03,
+          "CoordType": 0,
+          "MaxPixel": 250000,
+          "MaxLevel": 12,
+          "MapLevel": 12
+        }
+      ]
+    }
+  },
+  "response": {
+    "cmdid": 20301,
+    "ret": null,
+    "msg": {
+      "x_lng1": 106.56,
+      "y_lat1": 39.0,
+      "x_lng2": 106.59,
+      "y_lat2": 39.03,
+      "CoordType": 0,
+      "MaxLevel": 12,
+      "MapLevel": 12,
+      "MaxPixel": 250000,
+      "Data": "iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAIAAABEtEjdAAAAMHRFWHREZXNjcmlwdGlvbgBTSU1VTEFU…",
+      "DataFormat": "PNG",
+      "MockNote": "SIMULATED MAP：非奥维真实影像，见 PNG 水印与元数据",
+      "Simulated": true,
+      "_data_truncated": true
+    }
+  }
+}

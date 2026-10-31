@@ -1,0 +1,68 @@
+{
+ "source": "SRTM 1arcsec N39E115, AWS elevation-tiles-prod",
+ "job_id": "j-20261029-180027-722b33",
+ "figures": [
+  {
+   "figure_id": "overview",
+   "stored": "docs/evidence/images/real-srtm-overview.png",
+   "sha256": "4a5e33895ccf99e32dc19996c0208581668b7df89c165463826a52b0cd60bb60",
+   "bytes": 229860
+  },
+  {
+   "figure_id": "seg-01",
+   "stored": "docs/evidence/images/real-srtm-seg-01.png",
+   "sha256": "547668f3de99a8d2bca4783785aad172300cc6e86ee2be55408f2dcea34e371a",
+   "bytes": 112493
+  },
+  {
+   "figure_id": "seg-02",
+   "stored": "docs/evidence/images/real-srtm-seg-02.png",
+   "sha256": "0cb422cabe98490086705751c539c34d19f0b7c7a1eda4f35a0d07e661a3eb22",
+   "bytes": 117723
+  },
+  {
+   "figure_id": "seg-03",
+   "stored": "docs/evidence/images/real-srtm-seg-03.png",
+   "sha256": "b0c0db68707048746f3d8d289b8590dae6edeadec66bd301e088eabc99eb2163",
+   "bytes": 124581
+  },
+  {
+   "figure_id": "seg-04",
+   "stored": "docs/evidence/images/real-srtm-seg-04.png",
+   "sha256": "9cc170dbad0fa7825a013bf5e77b98a4a5fa3d61319d8ef41b1ce5702d890de8",
+   "bytes": 143146
+  },
+  {
+   "figure_id": "seg-05",
+   "stored": "docs/evidence/images/real-srtm-seg-05.png",
+   "sha256": "96ddf37b4712cb34ec84726dafd3ca287bf1f3539cbea622aa1874a5c3e742b9",
+   "bytes": 158093
+  },
+  {
+   "figure_id": "seg-06",
+   "stored": "docs/evidence/images/real-srtm-seg-06.png",
+   "sha256": "b5bde3817a1d837c3905b02df0a295140001751802907a570d83f17ef8d8ddf5",
+   "bytes": 153121
+  },
+  {
+   "figure_id": "seg-07",
+   "stored": "docs/evidence/images/real-srtm-seg-07.png",
+   "sha256": "a69a0b30f24567d13acc7f9a84bebf005c9e9a926e6c16942766c9fd8891ecfa",
+   "bytes": 127862
+  },
+  {
+   "figure_id": "seg-08",
+   "stored": "docs/evidence/images/real-srtm-seg-08.png",
+   "sha256": "7dbc5145045bc8ae152dd726a07bdc841e5326674493e103be774d7979ad5357",
+   "bytes": 128739
+  }
+ ],
+ "area_m2": 19673902.93067287,
+ "metric_crs": "EPSG:32650",
+ "outlet_lonlat": {
+  "lon": 115.6736125,
+  "lat": 39.8525625,
+  "source": "explicit_lonlat",
+  "simulated": false
+ }
+}

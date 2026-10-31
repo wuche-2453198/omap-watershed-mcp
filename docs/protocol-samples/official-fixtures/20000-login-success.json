@@ -1,0 +1,15 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.1.2.1 连接成功",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "成功时 ret 是奥维版本号（示例 817），不是 0"
+  },
+  "cmdid": 20000,
+  "ret": 817,
+  "msg": {
+    "AppId": 41
+  }
+}

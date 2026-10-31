@@ -1,0 +1,24 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.24 获取奥维互动地图版本",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20006,
+    "ret": 0,
+    "msg": {}
+  },
+  "response": {
+    "cmdid": 20006,
+    "ret": 817,
+    "msg": {
+      "Simulated": true
+    }
+  }
+}

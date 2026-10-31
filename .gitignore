@@ -1,0 +1,42 @@
+# 本地开发环境与运行产物（不提交）
+.venv/
+.conda/
+.cache/
+.dsh-home/
+.dsh-home-verify/
+.ovital-mcp/
+.conda/grass-install.log
+.conda/grass-install*.log
+.conda/pkgs/
+.conda/xdg/
+.data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.matplotlib/
+config/ovital.yaml
+secrets/
+*.psk
+
+# 本机生成的 DSH patch（含绝对路径；由 scripts/install_windows.ps1 生成）
+ovital_mcp/dsh/*.local.yml
+
+# 任务/成果（如放在仓库内）
+tasks/
+exports/
+jobs/
+output/
+*.log
+
+# Python 打包产物
+*.egg-info/
+build/
+dist/
+
+# 研究资料/临时文件（含第三方手册与官方样例，不随仓库公开）
+.research/
+.dsflash/
+.tmp_vision_review/
+*.hgt
+*.hgt.gz
+.DS_Store

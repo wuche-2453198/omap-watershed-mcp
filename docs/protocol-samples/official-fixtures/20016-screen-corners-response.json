@@ -1,0 +1,23 @@
+{
+  "_kind": "response",
+  "_source": {
+    "manual_section": "2.3.58.2 返回数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "手册示例数值明显错位（latlt=30.59/lnglt=27.15/latrb=111.42/lngrb=119.10），说明示例不可作为轴序依据；本夹具原样保留以便测试容错告警，待实测"
+  },
+  "cmdid": 20016,
+  "msg": {
+    "latc": 28.88796935,
+    "lngc": 115.25756836,
+    "latlt": 30.59536557,
+    "lnglt": 27.15203275,
+    "latrb": 111.41784668,
+    "lngrb": 119.09729004,
+    "ReqCoordType": 1,
+    "RealLl": 1,
+    "MapLevel": 8,
+    "MapType": 38
+  }
+}

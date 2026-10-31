@@ -1,0 +1,139 @@
+{
+  "_kind": "command-matrix",
+  "_source": {
+    "manual_section": "2.2.1 命令号",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false
+  },
+  "implemented": [
+    {
+      "cmdid": 20000,
+      "section": "2.3.1",
+      "api": "OvitalClient.connect"
+    },
+    {
+      "cmdid": 20006,
+      "section": "2.3.24",
+      "api": "commands.get_version"
+    },
+    {
+      "cmdid": 20008,
+      "section": "2.3.2",
+      "api": "OvitalClient.next_event"
+    },
+    {
+      "cmdid": 20009,
+      "section": "2.3.3",
+      "api": "OvitalClient.next_event"
+    },
+    {
+      "cmdid": 20014,
+      "section": "2.3.49",
+      "api": "OvitalClient.monitor_object_changes"
+    },
+    {
+      "cmdid": 20015,
+      "section": "2.3.49",
+      "api": "OvitalClient.next_event"
+    },
+    {
+      "cmdid": 20016,
+      "section": "2.3.58",
+      "api": "commands.get_screen_corners"
+    },
+    {
+      "cmdid": 20101,
+      "section": "2.3.11",
+      "api": "commands.get_objects"
+    },
+    {
+      "cmdid": 20103,
+      "section": "2.3.13",
+      "api": "commands.delete_objects"
+    },
+    {
+      "cmdid": 20104,
+      "section": "2.3.17",
+      "api": "commands.get_selected"
+    },
+    {
+      "cmdid": 20107,
+      "section": "2.3.22",
+      "api": "commands.find_objects"
+    },
+    {
+      "cmdid": 20110,
+      "section": "2.3.18",
+      "api": "commands.get_selected_tree"
+    },
+    {
+      "cmdid": 20112,
+      "section": "2.3.12",
+      "api": "commands.write_tree"
+    },
+    {
+      "cmdid": 20212,
+      "section": "2.3.28",
+      "api": "commands.get_viewport"
+    },
+    {
+      "cmdid": 20222,
+      "section": "2.3.51",
+      "api": "commands.get_system_crs"
+    },
+    {
+      "cmdid": 20301,
+      "section": "2.3.29",
+      "api": "commands.get_map_image"
+    },
+    {
+      "cmdid": 20303,
+      "section": "2.3.31",
+      "api": "commands.get_contours"
+    },
+    {
+      "cmdid": 20501,
+      "section": "2.3.19",
+      "api": "commands.get_vip_level"
+    },
+    {
+      "cmdid": 20730,
+      "section": "2.3.52",
+      "api": "commands.get_viewport"
+    },
+    {
+      "cmdid": 20802,
+      "section": "2.3.48",
+      "api": "commands.get_shape_metrics"
+    }
+  ],
+  "not_implemented": [
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20010,
+    20011,
+    20012,
+    20013,
+    20100,
+    20106,
+    20108,
+    20201,
+    20202,
+    20211,
+    20221,
+    20302,
+    20401,
+    20503,
+    20601,
+    20701,
+    20801,
+    20810,
+    20811,
+    20820,
+    20821
+  ]
+}

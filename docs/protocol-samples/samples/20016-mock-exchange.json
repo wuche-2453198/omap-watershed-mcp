@@ -1,0 +1,37 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.58 获取屏幕中心点、左上角、右下角坐标",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "ReqCoordType 是独立枚举；手册示例数值错位（待实测）"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20016,
+    "ret": 0,
+    "msg": {
+      "ReqCoordType": 1
+    }
+  },
+  "response": {
+    "cmdid": 20016,
+    "ret": null,
+    "msg": {
+      "latc": 39.01064751,
+      "lngc": 106.57287598,
+      "latlt": 39.02564751,
+      "lnglt": 106.55287598000001,
+      "latrb": 38.99564751,
+      "lngrb": 106.59287598,
+      "ReqCoordType": 1,
+      "RealLl": 1,
+      "MapLevel": 12,
+      "MapType": 6,
+      "Simulated": true
+    }
+  }
+}

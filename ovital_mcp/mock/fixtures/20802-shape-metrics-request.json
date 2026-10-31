@@ -1,0 +1,14 @@
+{
+  "_kind": "request",
+  "_source": {
+    "manual_section": "2.3.48.1 获取图形对象基本信息-请求数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false
+  },
+  "cmdid": 20802,
+  "ret": 0,
+  "msg": {
+    "ObjID": 828960081
+  }
+}

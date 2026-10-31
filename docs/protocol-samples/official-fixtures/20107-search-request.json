@@ -1,0 +1,25 @@
+{
+  "_kind": "request",
+  "_source": {
+    "manual_section": "2.3.22.1 查找奥维对象-请求数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "note": "手册表字段 idParent/idShapeSelect 与示例 ParentID/ShapeSelect 不一致"
+  },
+  "cmdid": 20107,
+  "ret": 0,
+  "msg": {
+    "ParentID": 0,
+    "idParent": 0,
+    "SrhOpt": 0,
+    "NoChild": 0,
+    "SrhTxt": "天桥",
+    "ObjType": 7,
+    "ShapeSelect": 0,
+    "idShapeSelect": 0,
+    "MaxCnt": 0,
+    "SrhValue": 1,
+    "NoCase": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.48 获取图形对象基本信息",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "面积 ㎡、周长 km；表格与示例字段名不一致，两种都接受"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20802,
+    "ret": 0,
+    "msg": {
+      "ObjID": 1000000002
+    }
+  },
+  "response": {
+    "cmdid": 20802,
+    "ret": null,
+    "msg": {
+      "ObjID": 1000000002,
+      "PointCnt": 4,
+      "AreaCnt": 1,
+      "Perimeter": 3.951801,
+      "AreaSize": 961157.679906,
+      "Simulated": true
+    }
+  }
+}

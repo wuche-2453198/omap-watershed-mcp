@@ -1,0 +1,66 @@
+# OMAP Watershed MCP — DSH Cordis patch 覆盖层（overlay）
+#
+# 依据（官方）：
+# - MCP 客户端包 @deepseek-ai/dsh-mcp-client（0.1.5-rc.1）README：
+#   https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/mcp/mcp-client/README.md
+# - DSH 官方 MCP 接入示例（memory overlay，格式与启动命令同源）：
+#   https://deepseek-harness.github.io/deepseek-harness/en/guide/mcp-memory
+# - DSH patch 层语义：profile 的 bundles → cordis.patch.yml → home patch → --patch 覆盖层；
+#   顶层是 YAML 数组，每个元素是一个 loader patch 条目；`insert:` 内是新增插件行。
+#
+# 用法：
+#   Windows（路径按实际部署替换）：
+#     dsh web --patch C:/work/omap-mcp/ovital_mcp/dsh/ovital.cordis.yml
+#   POSIX：
+#     dsh web --patch "$PWD/ovital_mcp/dsh/ovital.cordis.yml"
+#
+# 接入后模型可见工具名为 `mcp__ovital__<tool>`（serverName=ovital）。
+# 本文件不是其他客户端的 `mcpServers` 配置；不要改成那种结构。
+#
+# 安全约定：
+# - 本文件只放“非秘密”配置；预共享密钥（PSK）走配置文件里的 `ovital.psk_file`，
+#   不写入本 patch、不写入 env。
+# - DSH 启动 stdio 子进程时会清理父进程环境中名字匹配 /KEY|PASSWORD|SECRET|TOKEN/i
+#   的变量以及全部 `DSH_*` 变量，因此不能依赖“继承环境变量”传凭据。
+# - `OVITAL_MCP_CONFIG` 只是配置文件路径（非秘密），显式传入可避免依赖 cwd 猜测。
+
+- insert:
+    - id: mcp-ovital
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        # 工具命名空间：mcp__ovital__<rawName>，[A-Za-z0-9_-]{1,32}，同一注册作用域内唯一。
+        serverName: ovital
+        transport: stdio
+
+        # ---- Windows（默认示例；按本机实际安装路径替换）----
+        command: 'C:/work/omap-mcp/.venv/Scripts/python.exe'
+        args: ['-m', 'ovital_mcp']
+        cwd: 'C:/work/omap-mcp'
+
+        # ---- POSIX（macOS/Linux 本机调试用；启用时注释掉上面的 Windows 三行）----
+        # command: '/Users/you/omap-mcp/.venv/bin/python'
+        # args: ['-m', 'ovital_mcp']
+        # cwd: '/Users/you/omap-mcp'
+
+        # 非秘密环境变量。OVITAL_MCP_CONFIG 为目标配置文件路径（见 config.example.yaml）。
+        # 注意：不要把 PSK 写进这里或任何环境变量。
+        env:
+          OVITAL_MCP_CONFIG: 'C:/work/omap-mcp/config/ovital.yaml'
+          PYTHONIOENCODING: 'utf-8'
+          PYTHONUTF8: '1'
+
+        # 单次 tools/call 超时（官方默认 60,000ms）。本服务按“单次调用 < 5s”设计：
+        # 集水区计算走 start_watershed → get_job 轮询的持久任务，不占用单次调用。
+        # 60s 只是慢机器/大图返回时的安全上限，不是期望耗时。
+        toolCallTimeoutMs: 60000
+
+        # false：启动时奥维未运行、无凭据或工具同步失败不阻断 DSH 启动；
+        # harness 仍会启动，只是本服务的工具不出现，并在日志中记录错误。
+        # 本服务对奥维的连接是懒建立的（首次调用需要奥维的工具时才连），
+        # 因此 MCP 探测进程可以在没有奥维的机器上正常启动。
+        failOnStartupError: false
+
+        # 断线自动重连（官方默认值）。子进程崩溃后按 500ms 起、翻倍至 30s 退避重连；
+        # 连续 10 次失败后移除工具集，需重载配置或重启 DSH。
+        reconnect:
+          enabled: true

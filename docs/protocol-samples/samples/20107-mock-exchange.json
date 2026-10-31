@@ -1,0 +1,53 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.22 查找奥维对象",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "响应只含 ObjID/ObjType，不含名称"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20107,
+    "ret": 0,
+    "msg": {
+      "SrhOpt": 5,
+      "SrhTxt": "OMAP-MCP 回放草稿",
+      "ObjType": 0,
+      "NoChild": 0,
+      "MaxCnt": 0,
+      "SrhValue": 0,
+      "NoCase": 1,
+      "ParentID": 0,
+      "idParent": 0,
+      "ShapeSelect": 0,
+      "idShapeSelect": 0
+    }
+  },
+  "response": {
+    "cmdid": 20107,
+    "ret": null,
+    "msg": {
+      "ReqVer": 0,
+      "SrhOpt": 5,
+      "ObjType": 0,
+      "ParentID": 0,
+      "ShapeSelect": 0,
+      "NoChild": 0,
+      "MaxCnt": 0,
+      "SrhTxt": "OMAP-MCP 回放草稿",
+      "SrhValue": 0,
+      "NoCase": 1,
+      "ListID": [
+        {
+          "ObjID": 1000000001,
+          "ObjType": 30
+        }
+      ],
+      "Simulated": true
+    }
+  }
+}

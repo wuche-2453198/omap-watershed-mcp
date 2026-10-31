@@ -1,0 +1,1081 @@
+{
+  "kind": "protocol-replay-evidence",
+  "generated_by": "scripts/replay_protocol.py",
+  "protocol": {
+    "manual": "奥维互动地图WEB开发工具接口（V2.7）",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "sdk_download_url": "https://download.ovital.com/pub/api/omapInterfaceWeb_latest.zip",
+    "sdk_local_path": ".research/ovital-scratch/zip-32/omapInterfaceWeb_latest/"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "evidence_level": "offline_simulated",
+  "real_device_pending": true,
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13",
+    "note": "本机为 macOS，无 Windows 奥维客户端与真实账号；全部结论来自模拟服务器"
+  },
+  "repeatable": true,
+  "run_count": 4,
+  "runs": [
+    {
+      "write_style": "manual_flat",
+      "steps": [
+        {
+          "step": "login",
+          "cmdid": 20000,
+          "ok": true,
+          "elapsed_ms": 6.174
+        },
+        {
+          "step": "probe_capabilities",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 16.109
+        },
+        {
+          "step": "get_version",
+          "cmdid": 20006,
+          "ok": true,
+          "elapsed_ms": 0.177,
+          "result": 817
+        },
+        {
+          "step": "get_vip_level",
+          "cmdid": 20501,
+          "ok": true,
+          "elapsed_ms": 0.173
+        },
+        {
+          "step": "get_system_crs",
+          "cmdid": 20222,
+          "ok": true,
+          "elapsed_ms": 0.202
+        },
+        {
+          "step": "get_selected_empty",
+          "cmdid": 20104,
+          "ok": true,
+          "elapsed_ms": 0.175
+        },
+        {
+          "step": "write_draft_tree",
+          "cmdid": 20112,
+          "ok": true,
+          "elapsed_ms": 0.455
+        },
+        {
+          "step": "next_event_20015",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.072
+        },
+        {
+          "step": "read_back_shape",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.216
+        },
+        {
+          "step": "compare_vertices",
+          "ok": true,
+          "result": {
+            "max_delta_deg": 0.0,
+            "mean_delta_deg": 0.0,
+            "point_count_local": 4,
+            "point_count_readback": 4,
+            "axis_order_checked": true,
+            "axis_order": "lon,lat",
+            "swap_detected": false,
+            "within_tolerance": true,
+            "tolerance_deg": 1e-07,
+            "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+          }
+        },
+        {
+          "step": "shape_metrics",
+          "cmdid": 20802,
+          "ok": true,
+          "elapsed_ms": 64.867
+        },
+        {
+          "step": "metrics_accounting",
+          "ok": true,
+          "result": {
+            "mock_area_m2": 961157.679906,
+            "independent_area_m2": 961157.6799055526,
+            "area_diff_m2": 4.473840817809105e-07,
+            "area_rel_diff": 4.654637747105889e-13,
+            "mock_perimeter_km": 3.951801,
+            "independent_perimeter_km": 3.951801473133129,
+            "perimeter_diff_km": 4.7313312867558466e-07,
+            "metric_crs": "EPSG:32648",
+            "point_count": 4,
+            "area_count": 1,
+            "tolerance_m2": 1e-06,
+            "within_tolerance": true,
+            "note": "模拟器与回放脚本各自独立用 pyproj+shapely 计算，口径一致"
+          }
+        },
+        {
+          "step": "get_map_image",
+          "cmdid": 20301,
+          "ok": true,
+          "elapsed_ms": 4.578
+        },
+        {
+          "step": "map_image_inspect",
+          "ok": true,
+          "result": {
+            "bytes": 16148,
+            "sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+            "size": [
+              500,
+              500
+            ],
+            "description": "SIMULATED MAP - NOT REAL OVITAL DATA",
+            "simulated_metadata": "True",
+            "verified_against_real_device": "False",
+            "watermark_ok": true,
+            "red_watermark_pixels": 818
+          }
+        },
+        {
+          "step": "get_contours",
+          "cmdid": 20303,
+          "ok": true,
+          "elapsed_ms": 0.412
+        },
+        {
+          "step": "screen_corners",
+          "cmdid": 20016,
+          "ok": true,
+          "elapsed_ms": 0.232
+        },
+        {
+          "step": "viewport",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.587
+        },
+        {
+          "step": "find_objects",
+          "cmdid": 20107,
+          "ok": true,
+          "elapsed_ms": 0.242
+        },
+        {
+          "step": "delete_objects",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.186,
+          "result": null
+        },
+        {
+          "step": "read_after_delete",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.18
+        },
+        {
+          "step": "delete_folder",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.163,
+          "result": null
+        }
+      ],
+      "failures": [],
+      "core": {
+        "login_ret": 817,
+        "app_id": "42",
+        "simulated": true,
+        "capabilities_status": "ok",
+        "object_ids": [
+          1000000001,
+          1000000002,
+          1000000003
+        ],
+        "vertices_readback": [
+          [
+            106.57,
+            39.01
+          ],
+          [
+            106.58,
+            39.01
+          ],
+          [
+            106.58,
+            39.02
+          ],
+          [
+            106.57,
+            39.02
+          ]
+        ],
+        "comparison": {
+          "max_delta_deg": 0.0,
+          "mean_delta_deg": 0.0,
+          "point_count_local": 4,
+          "point_count_readback": 4,
+          "axis_order_checked": true,
+          "axis_order": "lon,lat",
+          "swap_detected": false,
+          "within_tolerance": true,
+          "tolerance_deg": 1e-07,
+          "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+        },
+        "metrics": {
+          "area_m2": 961157.679906,
+          "perimeter_km": 3.951801,
+          "point_count": 4
+        },
+        "map_png_sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+        "map_png_bytes": 16148,
+        "write_attempts": 1
+      },
+      "digest": "f05b71f294fbfecf863ef1c51f632e7c28cf3611436409670de6123779409a56",
+      "client_stats": {
+        "endpoint": "ws://127.0.0.1:54506",
+        "connected": true,
+        "simulated": true,
+        "server_version": 817,
+        "app_id": "42",
+        "requests": 27,
+        "events": 2,
+        "queued_events": 1,
+        "last_error": null
+      }
+    },
+    {
+      "write_style": "manual_flat",
+      "steps": [
+        {
+          "step": "login",
+          "cmdid": 20000,
+          "ok": true,
+          "elapsed_ms": 0.806
+        },
+        {
+          "step": "probe_capabilities",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 4.309
+        },
+        {
+          "step": "get_version",
+          "cmdid": 20006,
+          "ok": true,
+          "elapsed_ms": 0.186,
+          "result": 817
+        },
+        {
+          "step": "get_vip_level",
+          "cmdid": 20501,
+          "ok": true,
+          "elapsed_ms": 0.173
+        },
+        {
+          "step": "get_system_crs",
+          "cmdid": 20222,
+          "ok": true,
+          "elapsed_ms": 0.257
+        },
+        {
+          "step": "get_selected_empty",
+          "cmdid": 20104,
+          "ok": true,
+          "elapsed_ms": 0.539
+        },
+        {
+          "step": "write_draft_tree",
+          "cmdid": 20112,
+          "ok": true,
+          "elapsed_ms": 0.543
+        },
+        {
+          "step": "next_event_20015",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.058
+        },
+        {
+          "step": "read_back_shape",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.206
+        },
+        {
+          "step": "compare_vertices",
+          "ok": true,
+          "result": {
+            "max_delta_deg": 0.0,
+            "mean_delta_deg": 0.0,
+            "point_count_local": 4,
+            "point_count_readback": 4,
+            "axis_order_checked": true,
+            "axis_order": "lon,lat",
+            "swap_detected": false,
+            "within_tolerance": true,
+            "tolerance_deg": 1e-07,
+            "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+          }
+        },
+        {
+          "step": "shape_metrics",
+          "cmdid": 20802,
+          "ok": true,
+          "elapsed_ms": 14.42
+        },
+        {
+          "step": "metrics_accounting",
+          "ok": true,
+          "result": {
+            "mock_area_m2": 961157.679906,
+            "independent_area_m2": 961157.6799055526,
+            "area_diff_m2": 4.473840817809105e-07,
+            "area_rel_diff": 4.654637747105889e-13,
+            "mock_perimeter_km": 3.951801,
+            "independent_perimeter_km": 3.951801473133129,
+            "perimeter_diff_km": 4.7313312867558466e-07,
+            "metric_crs": "EPSG:32648",
+            "point_count": 4,
+            "area_count": 1,
+            "tolerance_m2": 1e-06,
+            "within_tolerance": true,
+            "note": "模拟器与回放脚本各自独立用 pyproj+shapely 计算，口径一致"
+          }
+        },
+        {
+          "step": "get_map_image",
+          "cmdid": 20301,
+          "ok": true,
+          "elapsed_ms": 5.077
+        },
+        {
+          "step": "map_image_inspect",
+          "ok": true,
+          "result": {
+            "bytes": 16148,
+            "sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+            "size": [
+              500,
+              500
+            ],
+            "description": "SIMULATED MAP - NOT REAL OVITAL DATA",
+            "simulated_metadata": "True",
+            "verified_against_real_device": "False",
+            "watermark_ok": true,
+            "red_watermark_pixels": 818
+          }
+        },
+        {
+          "step": "get_contours",
+          "cmdid": 20303,
+          "ok": true,
+          "elapsed_ms": 0.385
+        },
+        {
+          "step": "screen_corners",
+          "cmdid": 20016,
+          "ok": true,
+          "elapsed_ms": 0.215
+        },
+        {
+          "step": "viewport",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.717
+        },
+        {
+          "step": "find_objects",
+          "cmdid": 20107,
+          "ok": true,
+          "elapsed_ms": 0.581
+        },
+        {
+          "step": "delete_objects",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.196,
+          "result": null
+        },
+        {
+          "step": "read_after_delete",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.153
+        },
+        {
+          "step": "delete_folder",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.154,
+          "result": null
+        }
+      ],
+      "failures": [],
+      "core": {
+        "login_ret": 817,
+        "app_id": "42",
+        "simulated": true,
+        "capabilities_status": "ok",
+        "object_ids": [
+          1000000001,
+          1000000002,
+          1000000003
+        ],
+        "vertices_readback": [
+          [
+            106.57,
+            39.01
+          ],
+          [
+            106.58,
+            39.01
+          ],
+          [
+            106.58,
+            39.02
+          ],
+          [
+            106.57,
+            39.02
+          ]
+        ],
+        "comparison": {
+          "max_delta_deg": 0.0,
+          "mean_delta_deg": 0.0,
+          "point_count_local": 4,
+          "point_count_readback": 4,
+          "axis_order_checked": true,
+          "axis_order": "lon,lat",
+          "swap_detected": false,
+          "within_tolerance": true,
+          "tolerance_deg": 1e-07,
+          "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+        },
+        "metrics": {
+          "area_m2": 961157.679906,
+          "perimeter_km": 3.951801,
+          "point_count": 4
+        },
+        "map_png_sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+        "map_png_bytes": 16148,
+        "write_attempts": 1
+      },
+      "digest": "f05b71f294fbfecf863ef1c51f632e7c28cf3611436409670de6123779409a56",
+      "client_stats": {
+        "endpoint": "ws://127.0.0.1:54508",
+        "connected": true,
+        "simulated": true,
+        "server_version": 817,
+        "app_id": "42",
+        "requests": 27,
+        "events": 2,
+        "queued_events": 1,
+        "last_error": null
+      }
+    },
+    {
+      "write_style": "sdk_nested",
+      "steps": [
+        {
+          "step": "login",
+          "cmdid": 20000,
+          "ok": true,
+          "elapsed_ms": 0.779
+        },
+        {
+          "step": "probe_capabilities",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 4.582
+        },
+        {
+          "step": "get_version",
+          "cmdid": 20006,
+          "ok": true,
+          "elapsed_ms": 0.191,
+          "result": 817
+        },
+        {
+          "step": "get_vip_level",
+          "cmdid": 20501,
+          "ok": true,
+          "elapsed_ms": 0.185
+        },
+        {
+          "step": "get_system_crs",
+          "cmdid": 20222,
+          "ok": true,
+          "elapsed_ms": 0.217
+        },
+        {
+          "step": "get_selected_empty",
+          "cmdid": 20104,
+          "ok": true,
+          "elapsed_ms": 0.181
+        },
+        {
+          "step": "write_draft_tree",
+          "cmdid": 20112,
+          "ok": true,
+          "elapsed_ms": 0.459
+        },
+        {
+          "step": "next_event_20015",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.047
+        },
+        {
+          "step": "read_back_shape",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.211
+        },
+        {
+          "step": "compare_vertices",
+          "ok": true,
+          "result": {
+            "max_delta_deg": 0.0,
+            "mean_delta_deg": 0.0,
+            "point_count_local": 4,
+            "point_count_readback": 4,
+            "axis_order_checked": true,
+            "axis_order": "lon,lat",
+            "swap_detected": false,
+            "within_tolerance": true,
+            "tolerance_deg": 1e-07,
+            "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+          }
+        },
+        {
+          "step": "shape_metrics",
+          "cmdid": 20802,
+          "ok": true,
+          "elapsed_ms": 14.53
+        },
+        {
+          "step": "metrics_accounting",
+          "ok": true,
+          "result": {
+            "mock_area_m2": 961157.679906,
+            "independent_area_m2": 961157.6799055526,
+            "area_diff_m2": 4.473840817809105e-07,
+            "area_rel_diff": 4.654637747105889e-13,
+            "mock_perimeter_km": 3.951801,
+            "independent_perimeter_km": 3.951801473133129,
+            "perimeter_diff_km": 4.7313312867558466e-07,
+            "metric_crs": "EPSG:32648",
+            "point_count": 4,
+            "area_count": 1,
+            "tolerance_m2": 1e-06,
+            "within_tolerance": true,
+            "note": "模拟器与回放脚本各自独立用 pyproj+shapely 计算，口径一致"
+          }
+        },
+        {
+          "step": "get_map_image",
+          "cmdid": 20301,
+          "ok": true,
+          "elapsed_ms": 4.635
+        },
+        {
+          "step": "map_image_inspect",
+          "ok": true,
+          "result": {
+            "bytes": 16148,
+            "sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+            "size": [
+              500,
+              500
+            ],
+            "description": "SIMULATED MAP - NOT REAL OVITAL DATA",
+            "simulated_metadata": "True",
+            "verified_against_real_device": "False",
+            "watermark_ok": true,
+            "red_watermark_pixels": 818
+          }
+        },
+        {
+          "step": "get_contours",
+          "cmdid": 20303,
+          "ok": true,
+          "elapsed_ms": 0.377
+        },
+        {
+          "step": "screen_corners",
+          "cmdid": 20016,
+          "ok": true,
+          "elapsed_ms": 0.207
+        },
+        {
+          "step": "viewport",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.546
+        },
+        {
+          "step": "find_objects",
+          "cmdid": 20107,
+          "ok": true,
+          "elapsed_ms": 0.214
+        },
+        {
+          "step": "delete_objects",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.18,
+          "result": null
+        },
+        {
+          "step": "read_after_delete",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.163
+        },
+        {
+          "step": "delete_folder",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.161,
+          "result": null
+        }
+      ],
+      "failures": [],
+      "core": {
+        "login_ret": 817,
+        "app_id": "42",
+        "simulated": true,
+        "capabilities_status": "ok",
+        "object_ids": [
+          1000000001,
+          1000000002,
+          1000000003
+        ],
+        "vertices_readback": [
+          [
+            106.57,
+            39.01
+          ],
+          [
+            106.58,
+            39.01
+          ],
+          [
+            106.58,
+            39.02
+          ],
+          [
+            106.57,
+            39.02
+          ]
+        ],
+        "comparison": {
+          "max_delta_deg": 0.0,
+          "mean_delta_deg": 0.0,
+          "point_count_local": 4,
+          "point_count_readback": 4,
+          "axis_order_checked": true,
+          "axis_order": "lon,lat",
+          "swap_detected": false,
+          "within_tolerance": true,
+          "tolerance_deg": 1e-07,
+          "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+        },
+        "metrics": {
+          "area_m2": 961157.679906,
+          "perimeter_km": 3.951801,
+          "point_count": 4
+        },
+        "map_png_sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+        "map_png_bytes": 16148,
+        "write_attempts": 1
+      },
+      "digest": "f05b71f294fbfecf863ef1c51f632e7c28cf3611436409670de6123779409a56",
+      "client_stats": {
+        "endpoint": "ws://127.0.0.1:54510",
+        "connected": true,
+        "simulated": true,
+        "server_version": 817,
+        "app_id": "42",
+        "requests": 27,
+        "events": 2,
+        "queued_events": 1,
+        "last_error": null
+      }
+    },
+    {
+      "write_style": "sdk_nested",
+      "steps": [
+        {
+          "step": "login",
+          "cmdid": 20000,
+          "ok": true,
+          "elapsed_ms": 0.74
+        },
+        {
+          "step": "probe_capabilities",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 4.429
+        },
+        {
+          "step": "get_version",
+          "cmdid": 20006,
+          "ok": true,
+          "elapsed_ms": 0.192,
+          "result": 817
+        },
+        {
+          "step": "get_vip_level",
+          "cmdid": 20501,
+          "ok": true,
+          "elapsed_ms": 0.181
+        },
+        {
+          "step": "get_system_crs",
+          "cmdid": 20222,
+          "ok": true,
+          "elapsed_ms": 0.216
+        },
+        {
+          "step": "get_selected_empty",
+          "cmdid": 20104,
+          "ok": true,
+          "elapsed_ms": 0.187
+        },
+        {
+          "step": "write_draft_tree",
+          "cmdid": 20112,
+          "ok": true,
+          "elapsed_ms": 0.439
+        },
+        {
+          "step": "next_event_20015",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.047
+        },
+        {
+          "step": "read_back_shape",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.215
+        },
+        {
+          "step": "compare_vertices",
+          "ok": true,
+          "result": {
+            "max_delta_deg": 0.0,
+            "mean_delta_deg": 0.0,
+            "point_count_local": 4,
+            "point_count_readback": 4,
+            "axis_order_checked": true,
+            "axis_order": "lon,lat",
+            "swap_detected": false,
+            "within_tolerance": true,
+            "tolerance_deg": 1e-07,
+            "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+          }
+        },
+        {
+          "step": "shape_metrics",
+          "cmdid": 20802,
+          "ok": true,
+          "elapsed_ms": 14.572
+        },
+        {
+          "step": "metrics_accounting",
+          "ok": true,
+          "result": {
+            "mock_area_m2": 961157.679906,
+            "independent_area_m2": 961157.6799055526,
+            "area_diff_m2": 4.473840817809105e-07,
+            "area_rel_diff": 4.654637747105889e-13,
+            "mock_perimeter_km": 3.951801,
+            "independent_perimeter_km": 3.951801473133129,
+            "perimeter_diff_km": 4.7313312867558466e-07,
+            "metric_crs": "EPSG:32648",
+            "point_count": 4,
+            "area_count": 1,
+            "tolerance_m2": 1e-06,
+            "within_tolerance": true,
+            "note": "模拟器与回放脚本各自独立用 pyproj+shapely 计算，口径一致"
+          }
+        },
+        {
+          "step": "get_map_image",
+          "cmdid": 20301,
+          "ok": true,
+          "elapsed_ms": 4.469
+        },
+        {
+          "step": "map_image_inspect",
+          "ok": true,
+          "result": {
+            "bytes": 16148,
+            "sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+            "size": [
+              500,
+              500
+            ],
+            "description": "SIMULATED MAP - NOT REAL OVITAL DATA",
+            "simulated_metadata": "True",
+            "verified_against_real_device": "False",
+            "watermark_ok": true,
+            "red_watermark_pixels": 818
+          }
+        },
+        {
+          "step": "get_contours",
+          "cmdid": 20303,
+          "ok": true,
+          "elapsed_ms": 0.408
+        },
+        {
+          "step": "screen_corners",
+          "cmdid": 20016,
+          "ok": true,
+          "elapsed_ms": 0.202
+        },
+        {
+          "step": "viewport",
+          "cmdid": null,
+          "ok": true,
+          "elapsed_ms": 0.545
+        },
+        {
+          "step": "find_objects",
+          "cmdid": 20107,
+          "ok": true,
+          "elapsed_ms": 0.22
+        },
+        {
+          "step": "delete_objects",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.176,
+          "result": null
+        },
+        {
+          "step": "read_after_delete",
+          "cmdid": 20101,
+          "ok": true,
+          "elapsed_ms": 0.17
+        },
+        {
+          "step": "delete_folder",
+          "cmdid": 20103,
+          "ok": true,
+          "elapsed_ms": 0.162,
+          "result": null
+        }
+      ],
+      "failures": [],
+      "core": {
+        "login_ret": 817,
+        "app_id": "42",
+        "simulated": true,
+        "capabilities_status": "ok",
+        "object_ids": [
+          1000000001,
+          1000000002,
+          1000000003
+        ],
+        "vertices_readback": [
+          [
+            106.57,
+            39.01
+          ],
+          [
+            106.58,
+            39.01
+          ],
+          [
+            106.58,
+            39.02
+          ],
+          [
+            106.57,
+            39.02
+          ]
+        ],
+        "comparison": {
+          "max_delta_deg": 0.0,
+          "mean_delta_deg": 0.0,
+          "point_count_local": 4,
+          "point_count_readback": 4,
+          "axis_order_checked": true,
+          "axis_order": "lon,lat",
+          "swap_detected": false,
+          "within_tolerance": true,
+          "tolerance_deg": 1e-07,
+          "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+        },
+        "metrics": {
+          "area_m2": 961157.679906,
+          "perimeter_km": 3.951801,
+          "point_count": 4
+        },
+        "map_png_sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+        "map_png_bytes": 16148,
+        "write_attempts": 1
+      },
+      "digest": "f05b71f294fbfecf863ef1c51f632e7c28cf3611436409670de6123779409a56",
+      "client_stats": {
+        "endpoint": "ws://127.0.0.1:54512",
+        "connected": true,
+        "simulated": true,
+        "server_version": 817,
+        "app_id": "42",
+        "requests": 27,
+        "events": 2,
+        "queued_events": 1,
+        "last_error": null
+      }
+    }
+  ],
+  "fault_scenarios": [
+    {
+      "scenario": "drop_on_write",
+      "ok": true,
+      "error": "OvitalConnectionError",
+      "write_requests": 1,
+      "connected_after": false,
+      "elapsed_ms": 0.374,
+      "note": "断线时 pending 请求显式失败；不自动重发创建（防重复对象）"
+    },
+    {
+      "scenario": "timeout_on",
+      "ok": true,
+      "error": "OvitalTimeoutError",
+      "requests": 1,
+      "note": "超时显式失败且不自动重试；写请求超时后应回读确认而非重写"
+    },
+    {
+      "scenario": "duplicate_20112",
+      "ok": true,
+      "write_requests": 1,
+      "objects_created": 1,
+      "duplicate_seen_as_event": true,
+      "note": "重复响应未被当成第二次写入结果；真实设备是否重发未知（待实测）"
+    },
+    {
+      "scenario": "permission_denied_20301",
+      "ok": true,
+      "error": "OvitalPrereqError",
+      "note": "ret=-7 映射为权限不足（OvitalPrereqError），不伪装成空图片"
+    }
+  ],
+  "official_fixture_replay": {
+    "fixtures_total": 27,
+    "requests_encoded": 10,
+    "responses_parsed": 17,
+    "failures": [],
+    "fixture_files": {
+      "20000": "20000-login-success.json",
+      "20006": "20006-version-response.json",
+      "20015": "20015-object-changed-event.json",
+      "20016": "20016-screen-corners-response.json",
+      "20101": "20101-shape-response.json",
+      "20103": "20103-delete-request.json",
+      "20104": "20104-selected-response.json",
+      "20107": "20107-search-response.json",
+      "20110": "20110-selected-tree-response.json",
+      "20112": "20112-write-response-nested.json",
+      "20222": "20222-system-crs-response.json",
+      "20301": "20301-map-data-response.json",
+      "20303": "20303-contour-response.json",
+      "20501": "20501-vip-response.json",
+      "20730": "20730-window-rect-response.json",
+      "20802": "20802-shape-metrics-response.json"
+    }
+  },
+  "key_results": {
+    "login_ret": 817,
+    "simulated": true,
+    "object_ids": {
+      "folder": 1000000001,
+      "shape": 1000000002,
+      "sign": 1000000003
+    },
+    "roundtrip": {
+      "max_delta_deg": 0.0,
+      "mean_delta_deg": 0.0,
+      "point_count_local": 4,
+      "point_count_readback": 4,
+      "axis_order_checked": true,
+      "axis_order": "lon,lat",
+      "swap_detected": false,
+      "within_tolerance": true,
+      "tolerance_deg": 1e-07,
+      "note": "逐点欧氏距离（单位：度）。1e-7 度约 1.1 cm，远小于 30 m DEM 精度；协议本身不保证小数位，真实设备往返精度待实测。"
+    },
+    "metrics_accounting": {
+      "mock_area_m2": 961157.679906,
+      "independent_area_m2": 961157.6799055526,
+      "area_diff_m2": 4.473840817809105e-07,
+      "area_rel_diff": 4.654637747105889e-13,
+      "mock_perimeter_km": 3.951801,
+      "independent_perimeter_km": 3.951801473133129,
+      "perimeter_diff_km": 4.7313312867558466e-07,
+      "metric_crs": "EPSG:32648",
+      "point_count": 4,
+      "area_count": 1,
+      "tolerance_m2": 1e-06,
+      "within_tolerance": true,
+      "note": "模拟器与回放脚本各自独立用 pyproj+shapely 计算，口径一致"
+    },
+    "map_image": {
+      "bytes": 16148,
+      "sha256": "4e8d9e5e14b9d762d71eab823775cadf77b88ea1be29931c0f2761885c6993c2",
+      "size": [
+        500,
+        500
+      ],
+      "description": "SIMULATED MAP - NOT REAL OVITAL DATA",
+      "simulated_metadata": "True",
+      "verified_against_real_device": "False",
+      "watermark_ok": true,
+      "red_watermark_pixels": 818
+    },
+    "write_styles_tested": [
+      "manual_flat",
+      "sdk_nested"
+    ],
+    "repeatable_digest": "f05b71f294fbfecf863ef1c51f632e7c28cf3611436409670de6123779409a56"
+  },
+  "failures": [],
+  "unverified": [
+    "20000 握手：真实奥维是否返回 Simulated 字段（预期不返回）；AppId 类型",
+    "登录失败时 ret=0 + msg.errmsg 的确切文本与字段名",
+    "20112 写入成功响应形态：手册示例是扁平 msg.ObjItems[]，官方样例按 msg.ObjItems[0].Object.ObjectDetail.ObjChildren 读取，二者需实测确认",
+    "20112 单次写入的顶点数/字节数上限，以及官方样例的分片字段（FragmentIndex/FragmentData/FragmentNum）是否被服务端接受",
+    "20103 删除成功的响应体（手册只写了失败形态）与 NoGroup 字段名（官方样例 BuildObj 误写成 NoTroup）",
+    "20802 响应字段名：手册表 idObj/iPointCnt/iAreaCnt/dPerimeter/dAreaSize vs 示例与官方样例 ObjID/PointCnt/AreaCnt/Perimeter/AreaSize",
+    "20301 请求地图级别字段名：手册表 MaxLevel vs 官方样例 BuildReqMapData 发送 MapLevel",
+    "20301 响应是否为扁平字段（示例）还是 ReqMapDatas 数组（表）",
+    "20303 等高线数据的具体数据格式（手册只给元数据字段，未给几何/高程数组结构）",
+    "20016 返回示例的经纬度字段值明显错位（latlt=30.59 / lnglt=27.15 等），需实测确认 latlt/lnglt/latrb/lngrb 的轴序与含义",
+    "20016 ReqCoordType=0 时「根据奥维决定」的实际语义",
+    "20110 分片响应字段与 base64 变体（官方样例 Base64ToStr 映射与 URL-safe 相反）",
+    "Shape 多区域/孔洞的表示（OuterRgnIdx + Mtp + Latlng 的确切规则）",
+    "两个点图形的圆/扇形/矩形语义（起始角/终止角、点顺序）",
+    "颜色字段编码（LineClr/AreaClr 是 0xRRGGBB、0xAARRGGBB 还是 0xBBGGRR）",
+    "20104/20101 响应 ObjID 类型不一致（int vs string）是否稳定",
+    "20107 查找对象只返回 ObjID/ObjType，不返回名称；名称需再查 20101",
+    "会员等级数值（OmapLevel）与 SVIP/VIP5 权限的对应关系",
+    "20302 地图图片文件命令与 20301 的差异（本版未实现 20302）"
+  ],
+  "artifacts": {
+    "samples_dir": "samples/",
+    "official_fixtures_dir": "official-fixtures/",
+    "simulated_map_png": "simulated-map-20301.png",
+    "readme": "README.md"
+  }
+}

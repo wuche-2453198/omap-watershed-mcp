@@ -1,0 +1,272 @@
+{
+  "_kind": "mock_exchange",
+  "_source": {
+    "manual_section": "2.3.12 设置收藏夹对象",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "simulated": true,
+    "note": "响应形态有手册扁平与官方样例嵌套两种，本样例为模拟器输出（待实测真实形态）"
+  },
+  "simulated": true,
+  "verified_against_real_device": false,
+  "request": {
+    "cmdid": 20112,
+    "ret": 0,
+    "msg": {
+      "ObjTree": {
+        "Type": 30,
+        "ObjID": 0,
+        "ParentID": 0,
+        "tmModify": "2026/10/30 00:52:44",
+        "Object": {
+          "Name": "OMAP-MCP 回放草稿",
+          "Type": 30,
+          "ObjectDetail": {
+            "Child": 2,
+            "LoadOk": 1,
+            "SaveMerge": 0,
+            "Group": 0,
+            "AutoLoad": 1,
+            "ShowLevel": 0,
+            "ShowLevelMax": 0,
+            "ShowLevelBak": 0,
+            "Crypt": 0,
+            "Share": 0,
+            "ReadOnly": 0,
+            "NotHotId": 0,
+            "Bind": 0,
+            "BindCheck": 0,
+            "Link": 0,
+            "LinkAutoCheck": 0,
+            "ChildiOverlay": 0,
+            "LinkUrl": "",
+            "Relate": 0,
+            "ObjChildren": [
+              {
+                "Type": 13,
+                "ObjID": 0,
+                "ParentID": 0,
+                "Object": {
+                  "Name": "集水区草稿",
+                  "Comment": "离线回放；非真实成果",
+                  "Type": 13,
+                  "ObjectDetail": {
+                    "Gcj02": 0,
+                    "OverlayIdx": 0,
+                    "TrackType": 0,
+                    "ShowLevel": 1,
+                    "ShowLevelMax": 0,
+                    "ShowLevelBak": 0,
+                    "OuterRgnIdx": 0,
+                    "EditMode": 0,
+                    "ShowFlag": 2,
+                    "LineClr": 16744448,
+                    "LineWidth": 3,
+                    "LineAlpha": 50,
+                    "AreaClr": 1090486272,
+                    "AreaAlpha": 60,
+                    "StartAngle": 0,
+                    "EndAngle": 0,
+                    "FillType": 0,
+                    "FillSubType": 0,
+                    "FillPattern": 0,
+                    "FillChgClr": 0,
+                    "FillRotate": 0,
+                    "FillScale": 0,
+                    "FillOffsetX": 0,
+                    "FillOffsetY": 0,
+                    "Mtp": 4,
+                    "Latlng": [
+                      39.01,
+                      106.57,
+                      39.01,
+                      106.58,
+                      39.02,
+                      106.58,
+                      39.02,
+                      106.57
+                    ]
+                  }
+                }
+              },
+              {
+                "Type": 7,
+                "ObjID": 0,
+                "ParentID": 0,
+                "Object": {
+                  "Name": "出口",
+                  "Comment": "出口点（模拟）",
+                  "Type": 7,
+                  "ObjectDetail": {
+                    "Lat": 39.015,
+                    "Lng": 106.575,
+                    "Gcj02": 0,
+                    "Altitude": 0,
+                    "EditMode": 0,
+                    "OverlayIdx": 0,
+                    "TxtType": 1,
+                    "ShowLevel": 1,
+                    "ShowLevelBak": 0,
+                    "ShowLevelMax": 0,
+                    "TimeUncertain": 0,
+                    "TxtShowSta": 0,
+                    "TxtShowStaSet": 0,
+                    "SignEvent": {
+                      "Radius": 0,
+                      "ShowClr": 0
+                    },
+                    "SignPic": {
+                      "SignPic": 1,
+                      "AlignFlag": 0,
+                      "SignClr": 0,
+                      "PicScale": 0,
+                      "SignPicNum": 0,
+                      "SignPicNumOffx": 0,
+                      "SignPicNumOffy": 0,
+                      "SignPicNumClr": 0,
+                      "SignPicNumSize": 0
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "cmdid": 20112,
+    "ret": null,
+    "msg": {
+      "ObjItems": [
+        {
+          "Type": 30,
+          "ObjID": "1000000001",
+          "ParentID": 0,
+          "SrvID": "4599880574647878781",
+          "tmModify": "2024/01/01 00:00:00",
+          "Object": {
+            "Name": "OMAP-MCP 回放草稿",
+            "Comment": "",
+            "Type": 30,
+            "ObjectDetail": {
+              "Child": 2,
+              "LoadOk": 1,
+              "SaveMerge": 0,
+              "Group": 0,
+              "AutoLoad": 1,
+              "ShowLevel": 0,
+              "ShowLevelMax": 0,
+              "ShowLevelBak": 0,
+              "Crypt": 0,
+              "Share": 0,
+              "ReadOnly": 0,
+              "NotHotId": 0,
+              "Bind": 0,
+              "BindCheck": 0,
+              "Link": 0,
+              "LinkAutoCheck": 0,
+              "ChildiOverlay": 0,
+              "LinkUrl": "",
+              "Relate": 0
+            }
+          }
+        },
+        {
+          "Type": 13,
+          "ObjID": "1000000002",
+          "ParentID": 1000000001,
+          "SrvID": "4704353292937774453",
+          "tmModify": "2024/01/01 00:00:00",
+          "Object": {
+            "Name": "集水区草稿",
+            "Comment": "离线回放；非真实成果",
+            "Type": 13,
+            "ObjectDetail": {
+              "Gcj02": 0,
+              "OverlayIdx": 0,
+              "TrackType": 0,
+              "ShowLevel": 1,
+              "ShowLevelMax": 0,
+              "ShowLevelBak": 0,
+              "OuterRgnIdx": 0,
+              "EditMode": 0,
+              "ShowFlag": 2,
+              "LineClr": 16744448,
+              "LineWidth": 3,
+              "LineAlpha": 50,
+              "AreaClr": 1090486272,
+              "AreaAlpha": 60,
+              "StartAngle": 0,
+              "EndAngle": 0,
+              "FillType": 0,
+              "FillSubType": 0,
+              "FillPattern": 0,
+              "FillChgClr": 0,
+              "FillRotate": 0,
+              "FillScale": 0,
+              "FillOffsetX": 0,
+              "FillOffsetY": 0,
+              "Mtp": 4,
+              "Latlng": [
+                39.01,
+                106.57,
+                39.01,
+                106.58,
+                39.02,
+                106.58,
+                39.02,
+                106.57
+              ]
+            }
+          }
+        },
+        {
+          "Type": 7,
+          "ObjID": "1000000003",
+          "ParentID": 1000000001,
+          "SrvID": "4758057099561375218",
+          "tmModify": "2024/01/01 00:00:00",
+          "Object": {
+            "Name": "出口",
+            "Comment": "出口点（模拟）",
+            "Type": 7,
+            "ObjectDetail": {
+              "Lat": 39.015,
+              "Lng": 106.575,
+              "Gcj02": 0,
+              "Altitude": 0,
+              "EditMode": 0,
+              "OverlayIdx": 0,
+              "TxtType": 1,
+              "ShowLevel": 1,
+              "ShowLevelBak": 0,
+              "ShowLevelMax": 0,
+              "TimeUncertain": 0,
+              "TxtShowSta": 0,
+              "TxtShowStaSet": 0,
+              "SignEvent": {
+                "Radius": 0,
+                "ShowClr": 0
+              },
+              "SignPic": {
+                "SignPic": 1,
+                "AlignFlag": 0,
+                "SignClr": 0,
+                "PicScale": 0,
+                "SignPicNum": 0,
+                "SignPicNumOffx": 0,
+                "SignPicNumOffy": 0,
+                "SignPicNumClr": 0,
+                "SignPicNumSize": 0
+              }
+            }
+          }
+        }
+      ],
+      "Simulated": true
+    }
+  }
+}

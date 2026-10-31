@@ -1,0 +1,20 @@
+{
+  "_kind": "request",
+  "_source": {
+    "manual_section": "2.3.13.1 删除收藏夹对象-请求数据",
+    "manual_url": "https://www.gpsov.com/appdoc/index.php?id=32",
+    "evidence_level": "official_document",
+    "verified_against_real_device": false,
+    "official_sample_sdk": "omapInterfaceWeb_latest/omapInterfaceWeb/js/omapobj.js BuildObj（注意官方样例把 NoGroup 误写成 NoTroup）",
+    "note": "手册字段 NoGroup；成功响应形态手册未给（只给失败表）→ 待实测"
+  },
+  "cmdid": 20103,
+  "ret": 0,
+  "msg": {
+    "NoGroup": 1,
+    "ListID": [
+      1682750257,
+      2014305939
+    ]
+  }
+}
